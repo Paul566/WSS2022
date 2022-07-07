@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    177575,       3742]
-NotebookOptionsPosition[    175368,       3702]
-NotebookOutlinePosition[    175760,       3718]
-CellTagsIndexPosition[    175717,       3715]
+NotebookDataLength[    145917,       3130]
+NotebookOptionsPosition[    144066,       3097]
+NotebookOutlinePosition[    144458,       3113]
+CellTagsIndexPosition[    144415,       3110]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -248,15 +248,55 @@ Cell[BoxData[{
            RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ",", 
         RowBox[{"ans", "=", 
          RowBox[{"flipDiagonally", "[", "ans", "]"}]}]}], "]"}], ";", 
-      "\[IndentingNewLine]", "ans"}]}], "\[IndentingNewLine]", "]"}]}], 
-  ";"}]}], "Input",
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"ans", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "1"}], "]"}], "]"}], "==", 
+          RowBox[{"ans", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "2"}], "]"}], "]"}]}], "&&", 
+         RowBox[{
+          RowBox[{"ans", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", "1"}], "]"}], "]"}], ">", 
+          RowBox[{"ans", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", "2"}], "]"}], "]"}]}]}], ",", 
+        RowBox[{"ans", "=", 
+         RowBox[{"flipDiagonally", "[", "ans", "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "ans"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "white", " ", "king", " ", "ends", " ", "up", " ", "in", " ", "the", " ", 
+     "eights", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"w1", "<", 
+        RowBox[{"n", "/", "2"}]}], ",", " ", 
+       RowBox[{"w2", "<", 
+        RowBox[{"n", "/", "2"}]}], ",", " ", 
+       RowBox[{"w1", ">=", "w2"}]}], ")"}]}], ",", " ", 
+    RowBox[{
+    "if", " ", "the", " ", "white", " ", "king", " ", "is", " ", "on", " ", 
+     "the", " ", "main", " ", "diagonal"}], ",", " ", 
+    RowBox[{
+    "then", " ", "black", " ", "king", " ", "ends", " ", "up", " ", "in", " ",
+      "the", " ", "half", " ", 
+     RowBox[{"(", 
+      RowBox[{"b1", ">=", "b2"}], ")"}]}]}], "*)"}]}]}], "Input",
  CellChangeTimes->{{3.866196574061655*^9, 3.866196615327683*^9}, {
   3.866196670298565*^9, 3.8661966821955967`*^9}, {3.866196712365292*^9, 
   3.866196917478505*^9}, {3.866197099940351*^9, 3.866197224443266*^9}, {
   3.86619889130016*^9, 3.866198931207378*^9}, {3.866201414352919*^9, 
-  3.86620143900133*^9}},
+  3.86620143900133*^9}, {3.866202993128516*^9, 3.86620308806854*^9}, {
+  3.8662068043865223`*^9, 3.8662068901465473`*^9}},
  CellLabel->
-  "In[315]:=",ExpressionUUID->"95411f1d-0bbd-44f9-88c1-039f4e2acbf6"],
+  "In[370]:=",ExpressionUUID->"95411f1d-0bbd-44f9-88c1-039f4e2acbf6"],
 
 Cell[BoxData[
  RowBox[{
@@ -364,7 +404,7 @@ Cell[BoxData[
    3.866105259797142*^9, 3.8661052601206627`*^9}, {3.866105301904068*^9, 
    3.866105319354906*^9}},
  CellLabel->
-  "In[321]:=",ExpressionUUID->"7d6c6976-e4d9-4289-a2df-631cad1123fc"],
+  "In[376]:=",ExpressionUUID->"7d6c6976-e4d9-4289-a2df-631cad1123fc"],
 
 Cell[BoxData[
  RowBox[{
@@ -400,7 +440,7 @@ Cell[BoxData[
   3.86611032046181*^9, 3.866110382021575*^9}, {3.866110417730048*^9, 
   3.8661104263584967`*^9}, {3.866192436950857*^9, 3.866192447857769*^9}},
  CellLabel->
-  "In[322]:=",ExpressionUUID->"9ac0766f-9117-41ae-b520-d61a33fc2b16"],
+  "In[377]:=",ExpressionUUID->"9ac0766f-9117-41ae-b520-d61a33fc2b16"],
 
 Cell[BoxData[
  RowBox[{
@@ -492,7 +532,7 @@ Cell[BoxData[
    3.866192193023458*^9, 3.8661921966824493`*^9}, {3.866196551153623*^9, 
    3.866196566306622*^9}},
  CellLabel->
-  "In[323]:=",ExpressionUUID->"d9a4ba31-d9db-4a7f-8638-6d71b6bcf4d4"],
+  "In[378]:=",ExpressionUUID->"d9a4ba31-d9db-4a7f-8638-6d71b6bcf4d4"],
 
 Cell[BoxData[
  RowBox[{
@@ -608,163 +648,7 @@ Cell[BoxData[
    3.866198780837736*^9}, {3.866200482032715*^9, 3.86620048848769*^9}, {
    3.866202050971534*^9, 3.866202051750493*^9}},
  CellLabel->
-  "In[359]:=",ExpressionUUID->"b18146c7-2ae7-463b-9724-6f7d6f88fc96"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"ChessPosition", "[", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"1", ",", "2"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"3", ",", "1"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"1", ",", "3"}], "}"}], ",", "1"}], "}"}], "]"}]], "Input",
- CellChangeTimes->{{3.866202677307563*^9, 3.866202691066145*^9}},
- CellLabel->
-  "In[366]:=",ExpressionUUID->"f9269244-b067-409c-aaed-382eb9670006"],
-
-Cell[BoxData[
- InterpretationBox[
-  TagBox[GridBox[{
-     {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
-     {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-     {"\<\" \"\>", "\[WhiteKing]", "\[WhiteRook]"}
-    },
-    AutoDelete->False,
-    GridBoxBackground->{
-     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-      "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-        GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-        GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-        GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-        GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-    GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-    GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-   "Grid"],
-  $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 1}]]], "Output",
- CellChangeTimes->{3.866202691663045*^9},
- CellLabel->
-  "Out[366]=",ExpressionUUID->"b7581977-1ffa-45e6-98c3-679a399230d8"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"ChessPosition", "/@", 
-  RowBox[{"nextPositions", "[", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"1", ",", "2"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"3", ",", "1"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"1", ",", "3"}], "}"}], ",", "1"}], "}"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.866202698148882*^9, 3.866202705500914*^9}},
- CellLabel->
-  "In[367]:=",ExpressionUUID->"8dfcb3b5-63a9-4496-bfb7-27a8bf56a9eb"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   InterpretationBox[
-    TagBox[GridBox[{
-       {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
-       {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-       {"\[WhiteRook]", "\[WhiteKing]", "\<\" \"\>"}
-      },
-      AutoDelete->False,
-      GridBoxBackground->{
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-        "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-          GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-          GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-          GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-          GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-      GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-      GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-     "Grid"],
-    $CellContext`ChessPosition[{{1, 2}, {3, 3}, {1, 1}, 0}]], ",", 
-   InterpretationBox[
-    TagBox[GridBox[{
-       {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
-       {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-       {"\[WhiteKing]", "\<\" \"\>", "\[WhiteRook]"}
-      },
-      AutoDelete->False,
-      GridBoxBackground->{
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-        "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-          GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-          GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-          GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-          GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-      GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-      GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-     "Grid"],
-    $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 0}]], ",", 
-   InterpretationBox[
-    TagBox[GridBox[{
-       {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
-       {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-       {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-      },
-      AutoDelete->False,
-      GridBoxBackground->{
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-        "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-          GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-          GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-          GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-          GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-      GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-      GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-     "Grid"],
-    $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 0}]], ",", 
-   InterpretationBox[
-    TagBox[GridBox[{
-       {"\[BlackKing]", "\<\" \"\>", "\[WhiteRook]"},
-       {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-       {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-      },
-      AutoDelete->False,
-      GridBoxBackground->{
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-        "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-          GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-          GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-          GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-          GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-      GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-      GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-     "Grid"],
-    $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 3}, 0}]], ",", 
-   InterpretationBox[
-    TagBox[GridBox[{
-       {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
-       {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-       {"\[WhiteRook]", "\[WhiteKing]", "\<\" \"\>"}
-      },
-      AutoDelete->False,
-      GridBoxBackground->{
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-        "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-          GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-          GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-          GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-          GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-      GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-      GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-     "Grid"],
-    $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 1}, 0}]]}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.8662027060077467`*^9},
- CellLabel->
-  "Out[367]=",ExpressionUUID->"4711e743-8e88-40a7-9a6d-5ffb2cba76a2"]
-}, Open  ]],
+  "In[379]:=",ExpressionUUID->"b18146c7-2ae7-463b-9724-6f7d6f88fc96"],
 
 Cell[BoxData[
  RowBox[{
@@ -777,7 +661,7 @@ Cell[BoxData[
     RowBox[{"nextPositions", "[", "p", "]"}]}]}], ";"}]], "Input",
  CellChangeTimes->{{3.8661081810252733`*^9, 3.866108238475637*^9}},
  CellLabel->
-  "In[360]:=",ExpressionUUID->"67ab1289-2e77-46eb-919d-c88edae88b05"],
+  "In[380]:=",ExpressionUUID->"67ab1289-2e77-46eb-919d-c88edae88b05"],
 
 Cell[BoxData[
  RowBox[{
@@ -861,7 +745,7 @@ Cell[BoxData[
    3.86620103202096*^9, 3.866201033387686*^9}, 3.8662012063020983`*^9, {
    3.8662014707859697`*^9, 3.866201489486375*^9}},
  CellLabel->
-  "In[361]:=",ExpressionUUID->"8e62f9d6-59fe-4cf8-8b35-60bf81eb9b61"],
+  "In[381]:=",ExpressionUUID->"8e62f9d6-59fe-4cf8-8b35-60bf81eb9b61"],
 
 Cell[BoxData[
  RowBox[{
@@ -879,7 +763,7 @@ Cell[BoxData[
   3.866201633220935*^9}, {3.866201668137813*^9, 3.866201761823183*^9}, {
   3.86620206958892*^9, 3.866202069870865*^9}},
  CellLabel->
-  "In[362]:=",ExpressionUUID->"f7d8459f-8f67-4ad6-a1b7-e5f907b709ca"],
+  "In[382]:=",ExpressionUUID->"f7d8459f-8f67-4ad6-a1b7-e5f907b709ca"],
 
 Cell[BoxData[
  RowBox[{
@@ -997,9 +881,28 @@ Cell[BoxData[
    3.866194515557564*^9, 3.866194557550511*^9}, {3.866194590635964*^9, 
    3.866194636611821*^9}, 3.86619485573267*^9, {3.866196118256887*^9, 
    3.866196140049409*^9}, 3.8661990284067783`*^9, 3.8661990840740557`*^9, {
-   3.8662015472316637`*^9, 3.8662015683183613`*^9}},
+   3.8662015472316637`*^9, 3.8662015683183613`*^9}, {3.8662033530808*^9, 
+   3.866203356957471*^9}},
  CellLabel->
-  "In[364]:=",ExpressionUUID->"23ef9c27-963f-41ef-af6f-bdaf1e489bd6"],
+  "In[383]:=",ExpressionUUID->"23ef9c27-963f-41ef-af6f-bdaf1e489bd6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vertexStyle", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "->", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", 
+           RowBox[{"3", ",", "1"}], "]"}], "]"}], "==", 
+         RowBox[{"-", "1"}]}], ",", "Blue", ",", "Red"}], "]"}]}], "&"}], "/@",
+     "positions"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.866203359583479*^9, 3.866203395290142*^9}},
+ CellLabel->
+  "In[384]:=",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
 
 Cell[CellGroupData[{
 
@@ -1007,13 +910,15 @@ Cell[BoxData[
  RowBox[{"graph", "=", 
   RowBox[{"Graph", "[", 
    RowBox[{"edges", ",", 
+    RowBox[{"VertexStyle", "\[Rule]", "vertexStyle"}], ",", 
     RowBox[{"VertexLabels", "\[Rule]", "labels"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.866108338976219*^9, 3.866108344525833*^9}, {
   3.866109793401802*^9, 3.866109810006317*^9}, {3.866109896482335*^9, 
   3.866109911611514*^9}, {3.866192888135078*^9, 3.866193030099763*^9}, {
-  3.8661945962330637`*^9, 3.866194600546522*^9}},
+  3.8661945962330637`*^9, 3.866194600546522*^9}, {3.866203312411459*^9, 
+  3.866203316968158*^9}, {3.866203402066373*^9, 3.866203402841255*^9}},
  CellLabel->
-  "In[365]:=",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
+  "In[385]:=",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -1029,21 +934,11 @@ Cell[BoxData[
         1}, {1, 3}, {3, 2}, 1}, {{1, 2}, {3, 1}, {2, 3}, 0}, {{1, 1}, {2, 
         3}, {1, 2}, 0}, {{1, 1}, {3, 3}, {1, 2}, 1}, {{1, 2}, {3, 2}, {2, 1}, 
         0}, {{1, 1}, {2, 3}, {2, 2}, 0}, {{1, 1}, {2, 3}, {3, 2}, 0}, {{1, 
-        1}, {2, 3}, {1, 3}, 0}, {{1, 1}, {1, 3}, {-1, -1}, 1}, {{1, 1}, {3, 
-        2}, {1, 3}, 1}, {{1, 1}, {2, 3}, {2, 1}, 0}, {{1, 1}, {3, 3}, {2, 1}, 
-        1}, {{1, 1}, {3, 2}, {2, 1}, 1}, {{1, 1}, {3, 3}, {2, 2}, 1}, {{1, 
-        1}, {2, 3}, {3, 1}, 0}, {{1, 2}, {3, 2}, {1, 3}, 0}, {{1, 1}, {2, 
-        3}, {3, 3}, 0}, {{1, 1}, {3, 2}, {-1, -1}, 1}, {{1, 2}, {3, 2}, {2, 
-        3}, 0}, {{1, 1}, {3, 3}, {-1, -1}, 1}, {{1, 1}, {3, 1}, {1, 2}, 1}, {{
-        1, 1}, {3, 1}, {2, 2}, 0}, {{1, 1}, {3, 1}, {3, 2}, 0}, {{1, 1}, {3, 
-        1}, {1, 3}, 0}, {{1, 1}, {3, 1}, {1, 3}, 1}, {{1, 1}, {3, 1}, {2, 3}, 
-        0}, {{1, 1}, {3, 1}, {3, 3}, 0}, {{1, 1}, {3, 1}, {1, 2}, 0}, {{1, 
-        1}, {3, 1}, {2, 1}, 0}, {{1, 1}, {3, 1}, {2, 2}, 1}, {{1, 1}, {3, 
-        2}, {2, 3}, 1}, {{1, 1}, {3, 1}, {2, 3}, 1}, {{1, 1}, {3, 2}, {1, 2}, 
-        0}, {{1, 1}, {3, 2}, {1, 3}, 0}, {{1, 1}, {3, 2}, {2, 3}, 0}, {{1, 
-        1}, {3, 2}, {3, 3}, 0}, {{1, 1}, {3, 2}, {2, 1}, 0}, {{1, 1}, {3, 
-        2}, {3, 1}, 0}, {{1, 1}, {3, 2}, {2, 2}, 0}, {{1, 1}, {3, 
-        1}, {-1, -1}, 1}, {{1, 1}, {3, 3}, {1, 2}, 0}, {{1, 2}, {3, 3}, {2, 
+        1}, {2, 3}, {1, 3}, 0}, {{1, 1}, {1, 3}, {-1, -1}, 1}, {{1, 1}, {2, 
+        3}, {2, 1}, 0}, {{1, 1}, {3, 3}, {2, 1}, 1}, {{1, 1}, {3, 3}, {2, 2}, 
+        1}, {{1, 1}, {2, 3}, {3, 1}, 0}, {{1, 2}, {3, 2}, {1, 3}, 0}, {{1, 
+        1}, {2, 3}, {3, 3}, 0}, {{1, 2}, {3, 2}, {2, 3}, 0}, {{1, 1}, {3, 
+        3}, {-1, -1}, 1}, {{1, 1}, {3, 3}, {1, 2}, 0}, {{1, 2}, {3, 3}, {2, 
         1}, 0}, {{1, 1}, {3, 3}, {2, 2}, 0}, {{1, 1}, {3, 3}, {3, 2}, 0}, {{1,
          1}, {3, 3}, {1, 3}, 0}, {{1, 1}, {3, 3}, {2, 1}, 0}, {{1, 1}, {3, 
         3}, {3, 1}, 0}, {{1, 1}, {3, 3}, {2, 3}, 0}, {{1, 2}, {3, 3}, {2, 2}, 
@@ -1060,27 +955,22 @@ Cell[BoxData[
         1}, 0}, {{1, 2}, {3, 3}, {1, 3}, 0}, {{1, 2}, {3, 3}, {2, 3}, 0}, {{1,
          2}, {3, 3}, {3, 2}, 0}, {{1, 1}, {1, 3}, {-1, -1}, 0}, {{1, 2}, {3, 
         1}, {-1, -1}, 0}, {{1, 1}, {2, 3}, {-1, -1}, 0}, {{1, 2}, {3, 
-        2}, {-1, -1}, 0}, {{1, 1}, {3, 1}, {-1, -1}, 0}, {{1, 1}, {3, 
         2}, {-1, -1}, 0}, {{1, 1}, {3, 3}, {-1, -1}, 0}, {{1, 2}, {3, 
         3}, {-1, -1}, 0}}, {CompressedData["
-1:eJwVxft+agAAAOBSS40aRhdhQtctlG5TazW0GFKirZ1ueoDzsOeFzvbH9/sq
-0d9NBMRisX8/fo8DiWTiJpEC02AczIC3YCoFJeFsLnubzWTvMgiKoXH0Bk2i
-d/c4QAB5oAAUi6UiWU6UqTKdB/PMQxZm4TJcgCsFtMAhPHKP5JEHpFIRqrVq
-vdpokM1cs9V8bD61aTEtPol1sS22WpKMyQ35UW7LtTrXATrVDt5tkiypkD2y
-06dogh7QQ1oZikNGgRRZ4qWu1JP60nAAD0Y94RnAVXyMT/CXF3JKUyr1So2p
-GTNnnpkJM2VmM2gmvcITZMK9aTndWBgNAzPejbelac2tmjW2PqylhWG203Km
-Ts55d5ZO+sNdeVpXI7S1xrKG3tV5faOvCN/sm4q5Mtfm1uS31jbgHVux+zZr
-b2zC3q7DzW6heQuv4anep/f1paumP/Vb/sL/9Of+PpgH46AWfAdqsN/b3+4f
-qHQ4lo7CkYNOZ250uECX0UXgThEUccL14IbX8BxGp/C0cy9Xd3fdRbvzf6be
-Uuo=
-       "], Null}, {VertexLabels -> {{{1, 1}, {1, 3}, {3, 1}, 1} -> Placed[
+1:eJwVxdmaQmAAAND6kYSyK1uERJYipGytyuU8Qi8wbzTPOjMX5zvG5/vrAwaD
+wc+f/4cAgiEEGqFjdIhi6AQdjXCYIKfkhMTIGUbRDD2kERqmZywHeCAAEczn
+izkhQZIsAQEVFJUkNEIiRGIp0iJO6RRLCZRKLZfGCnAmZ3E2t14TDpBNeSNb
+sqt4ykqxFUdxXdylNoRN2fjWnwZhFMIhE+7C7T5OvARJrOSQ7BOGSTMsc7Jp
+tsv22fiQHwtf9Xn/5GtaGKiBHpyDI1/GbCzGx/gUV7FeJVWtZ6mYsqmWnlM+
+rU7NuY38IirgwiwuxfUamHHplFgZlZfSK2+1V1s1Ut9rs77d0nv+wBfPbtEZ
+HY6/3rjRP/Ombx7N+9W82rzr87Zv3+3jF2yfLu8=
+       "], Null}, {
+      VertexLabels -> {{{1, 1}, {1, 3}, {3, 1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {3, 1}, 1}], 
-           Tooltip], {{1, 1}, {3, 1}, {1, 2}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 1}], 
-           Tooltip], {{1, 2}, {3, 2}, {2, 3}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 1}], 
            Tooltip], {{1, 1}, {1, 3}, {2, 3}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {2, 3}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {2, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 1}], 
            Tooltip], {{1, 1}, {3, 3}, {3, 1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 1}, 0}], 
            Tooltip], {{1, 2}, {3, 3}, {-1, -1}, 1} -> Placed[
@@ -1089,16 +979,12 @@ Uuo=
            $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 1}], 
            Tooltip], {{1, 2}, {3, 2}, {2, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 2}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {-1, -1}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 0}], 
            Tooltip], {{1, 1}, {3, 3}, {3, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 2}, 0}], 
            Tooltip], {{1, 1}, {3, 3}, {1, 3}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 3}, 0}], 
            Tooltip], {{1, 1}, {1, 3}, {-1, -1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {-1, -1}, 0}], 
-           Tooltip], {{1, 1}, {3, 1}, {3, 3}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 3}, 0}], 
            Tooltip], {{1, 1}, {3, 3}, {-1, -1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 1}], 
            Tooltip], {{1, 2}, {3, 1}, {2, 3}, 0} -> Placed[
@@ -1107,16 +993,10 @@ Uuo=
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 0}], 
            Tooltip], {{1, 1}, {3, 3}, {-1, -1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 0}], 
-           Tooltip], {{1, 1}, {3, 1}, {2, 3}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {3, 3}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}], 
            Tooltip], {{1, 2}, {3, 1}, {2, 1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 1}, 0}], 
            Tooltip], {{1, 1}, {3, 3}, {2, 3}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 3}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {1, 2}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 2}, 0}], 
            Tooltip], {{1, 2}, {3, 2}, {-1, -1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 0}], 
            Tooltip], {{1, 1}, {1, 3}, {3, 1}, 0} -> Placed[
@@ -1127,34 +1007,22 @@ Uuo=
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 0}], 
            Tooltip], {{1, 2}, {3, 3}, {1, 3}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 3}, {1, 3}, 0}], 
-           Tooltip], {{1, 1}, {3, 1}, {2, 2}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 0}], 
            Tooltip], {{1, 1}, {2, 3}, {3, 1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {2, 3}, {3, 1}, 1}], 
            Tooltip], {{1, 2}, {3, 1}, {1, 3}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {2, 3}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}], 
            Tooltip], {{1, 2}, {3, 3}, {2, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 3}, {2, 2}, 0}], 
-           Tooltip], {{1, 2}, {3, 3}, {2, 3}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 2}, {3, 3}, {2, 3}, 0}], 
-           Tooltip], {{1, 2}, {3, 2}, {3, 1}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 1}, 0}], 
            Tooltip], {{1, 2}, {3, 2}, {1, 3}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 1}], 
-           Tooltip], {{1, 1}, {3, 2}, {1, 3}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 1}], 
-           Tooltip], {{1, 1}, {3, 2}, {1, 3}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {3, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 1}, 0}], 
+           Tooltip], {{1, 2}, {3, 3}, {2, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 3}, {2, 3}, 0}], 
            Tooltip], {{1, 2}, {3, 3}, {-1, -1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 3}, {-1, -1}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {2, 1}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}], 
            Tooltip], {{1, 1}, {3, 3}, {2, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {2, 3}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}], 
            Tooltip], {{1, 1}, {1, 3}, {2, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {2, 2}, 0}], 
            Tooltip], {{1, 1}, {2, 3}, {3, 2}, 0} -> Placed[
@@ -1165,28 +1033,18 @@ Uuo=
            $CellContext`ChessPosition[{{1, 2}, {3, 1}, {-1, -1}, 0}], 
            Tooltip], {{1, 2}, {3, 2}, {2, 1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 1}], 
-           Tooltip], {{1, 1}, {3, 1}, {2, 2}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 1}], 
            Tooltip], {{1, 1}, {3, 3}, {1, 2}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 1}], 
-           Tooltip], {{1, 1}, {3, 1}, {1, 3}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {2, 1}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}], 
            Tooltip], {{1, 1}, {2, 3}, {2, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {2, 3}, {2, 2}, 0}], 
            Tooltip], {{1, 2}, {3, 2}, {1, 3}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {3, 1}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}], 
            Tooltip], {{1, 1}, {2, 3}, {3, 3}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {2, 3}, {3, 3}, 0}], 
            Tooltip], {{1, 1}, {3, 3}, {2, 1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 1}], 
            Tooltip], {{1, 1}, {2, 3}, {3, 1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {2, 3}, {3, 1}, 0}], 
-           Tooltip], {{1, 1}, {3, 1}, {3, 2}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 2}, 0}], 
            Tooltip], {{1, 2}, {3, 3}, {2, 1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 3}, {2, 1}, 0}], 
            Tooltip], {{1, 1}, {2, 3}, {-1, -1}, 0} -> Placed[
@@ -1211,8 +1069,6 @@ Uuo=
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {3, 3}, 0}], 
            Tooltip], {{1, 2}, {3, 1}, {1, 3}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 1}], 
-           Tooltip], {{1, 1}, {3, 1}, {-1, -1}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 1}], 
            Tooltip], {{1, 1}, {1, 3}, {1, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {1, 2}, 0}], 
            Tooltip], {{1, 2}, {3, 2}, {1, 1}, 0} -> Placed[
@@ -1233,28 +1089,14 @@ Uuo=
            $CellContext`ChessPosition[{{1, 2}, {3, 3}, {2, 2}, 1}], 
            Tooltip], {{1, 2}, {3, 1}, {1, 1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 1}, 0}], 
-           Tooltip], {{1, 1}, {3, 1}, {1, 3}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 1}], 
-           Tooltip], {{1, 1}, {3, 2}, {-1, -1}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}], 
-           Tooltip], {{1, 1}, {3, 1}, {1, 2}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 0}], 
-           Tooltip], {{1, 1}, {3, 1}, {2, 3}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 1}], 
-           Tooltip], {{1, 1}, {3, 1}, {2, 1}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 1}, 0}], 
            Tooltip], {{1, 1}, {2, 3}, {2, 1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {2, 3}, {2, 1}, 0}], 
            Tooltip], {{1, 1}, {1, 3}, {2, 1}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {2, 1}, 0}], 
            Tooltip], {{1, 2}, {3, 1}, {3, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 2}, 0}], 
-           Tooltip], {{1, 1}, {3, 2}, {2, 2}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}], 
            Tooltip], {{1, 2}, {3, 2}, {1, 1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 1}, 1}], 
-           Tooltip], {{1, 1}, {3, 1}, {-1, -1}, 0} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 0}], 
            Tooltip], {{1, 2}, {3, 3}, {3, 2}, 0} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 3}, {3, 2}, 0}], 
            Tooltip], {{1, 1}, {2, 3}, {3, 2}, 1} -> Placed[
@@ -1270,66 +1112,129 @@ Uuo=
            Tooltip], {{1, 2}, {3, 3}, {1, 1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 2}, {3, 3}, {1, 1}, 1}], 
            Tooltip], {{1, 1}, {1, 3}, {2, 1}, 1} -> Placed[
-           $CellContext`ChessPosition[{{1, 1}, {1, 3}, {2, 1}, 1}], 
-           Tooltip]}}]]}, 
+           $CellContext`ChessPosition[{{1, 1}, {1, 3}, {2, 1}, 1}], Tooltip]},
+        VertexStyle -> {{{1, 2}, {3, 3}, {2, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {1, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {2, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {3, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {1, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 1}, {1, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {1, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {3, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {1, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 2}, {1, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {2, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {3, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {3, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 3}, {3, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {1, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {1, 3}, {2, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {1, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {1, 3}, {2, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {1, 3}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 3}, {2, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {1, 3}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {3, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 3}, {2, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {2, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {1, 3}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {2, 3}, {3, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {1, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 3}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {1, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {1, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {1, 1}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {3, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {1, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {1, 1}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 3}, {2, 2}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 3}, {3, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {1, 2}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 2}, {2, 3}, 1} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {2, 1}, 0} -> 
+         RGBColor[1, 0, 0]}}]]}, 
     TagBox[GraphicsGroupBox[{
-       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.020206604420488914`], 
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.019920352889159863`], 
         ArrowBox[CompressedData["
-1:eJyFmGlYk1cWx7MTkmjCKjBOVRQXcBSodUXe41JBtIqOOwIuKJapWwVEKUKx
-ioAOVKxMtYDaimJpBScgahvZarWgIgWKxYAilQBVCAZIWGT40Pnyvx/kefLh
-Pr/7Xu7Z/ue875gtu1duE/J4vF+HfoK/fo2avfLlQSIqPNSm+kDYwnEVidOD
-rM3oaJxEe+fzQWbt5bZwZ6mST8UN6/ObQs0J+agbeb7btHy6u2nde6cndDHP
-F/r/t4t/T0H2keos/cdGhv+ruX20Ol1Fc2uiOlssJfRM2rBTkysnmpM4q/u2
-lnNPE6VaWyho3bzeb8/Zt3DIPwkX+kXlSYn31x/yL4rrQ3XRMpJ3Z8fuyetg
-zsvs1HzY0ycng6d4w+SP3jD7xz7ZcfuHKhUdrqs8EcET0saVXq++Uw5yp8K1
-zq3VLzj0J3I8D3nSlL4LnU4dnJPkdIu+w8hwzZSSXv1WEzfz96jA9InNDLdv
-F5Wb9+o5XlrsukLDcWZ/Qoa7XYRWSH8e1Yw7OM/I2PNraULuwEgrqjibMPDC
-JCX0B8YP+fBiH1PzuzK67r7EZLeyl+H77UZfNnQLyVOl7I9oM2fO//nG2jNN
-M5XU7+n/gd69lzM7dSZ2u6yDk7bHBiZnNzP2IEf7kS/c6MJ9s7aJ2ys5/HBP
-Pp+Qq0vi/pirHOB8O5TxYxXlzP4Ju+rHO0QbuMIFRtvqEgWhP6tHpf2SWGJO
-U+M2zKq/wWM41gfylNlfzk8Z38up2yMLNh17ynD0D/JCHy/tfW0f55b2VcX8
-xRIKq3jjxi8S04wA18IJyXomP5FjPSDH+kKO/kMuSBUk8QMEFDhJYqNtNCNc
-54duEexpElLlrEPBtFRJ6M8li/MyX2fJKdBe3z0iXMasa4s1xjlaMUU+mtck
-vqVi+IGwgbF5OjlVqa7FuaxiuZNr5w2bQXPSHLioNm4SMJzSqnTL/JSULy94
-v2u8ilAPL1nXJ/TY9XClrcGfZw5xjDfWK/KsQJcHwiUCuvKdtYXncwFhvaE/
-ked8P3V+SqmKcg9ddgxJEhHqacKFE4tu29hSdM5rnTxawvCab7IOnvSUkb1G
-e7tjlILZ373ec1S4aQS59xeNvVArY/ZjfSP3TtqRtX5ASsdNI3Oj4s0Y/ttF
-RZXv38wod6eh90o6+3zGNoNbXoaCNu+T5iZ2SAj1BvUeufSla8LNkzL6yPbv
-R4vmSJnnR50zTnKpEdHEH192yPQCwv2YX8gxv5CPHvS8uyFUSc4NZbH5n/IZ
-vm5Yi8fNofpycDgovtYjJLwP5hty9B/yuyc/Od/YpKIn8SP52RE8hlc5D079
-/VA/F/J8f9eUAR5hPp7xMXTFePCpbetn+rWhJiZfsX6Qbz1U5xj1TxNXEJrq
-FDrTjOFoP/LS1a35/BQB1Rxs/zZ+33BCvUQ9x3ysM2yvzXTu5hqfNNqFRA8n
-1NP6mwt3PRu0JO9cn9XBv4kI6wn7I+otrX6eUhn3kutvD2yqdJcQnhdhNLT/
-pLEmVfQjQ9iCYbQsePurE7vENCWmYXDc/GE0+p2QO+rFQsppTTXzKbZg+Jqs
-SQr+CjHNjVuhPWcuZnhI9A+3OnQ8OuY9QjT5oorZj/bgfqy3cy/8VWtFZdzZ
-zSc2zw6REPZD5L+k/HvnppJXXL2VbmPxZCnDa3f4r3nUW8e95l80lJbJGP7/
-vlJotqc/YDOfOa/y+liv10U8ql3lZF+RKqGqhAMbnBxNnO/T3eNsRCImn69o
-xbL6a52ch03grK91fML5Cjn6CzneBzneHzneF+3BfEL+4D6/qsu2gwvMcTn/
-4XkZw1EfkSdMjFs197iIIrMXHXlzQc76E+p/atDoh6EO/dyWtjOODjVypl8j
-x/xFjvmGHPMDOfoP+wm+TyDHfo4c6wn9jfmKeovzNHK0B+OFeoHxwn6Beo7z
-NPJJw3dvLSRb2n1h29JMB9Fb9R455jOeh/MB9guMD/bTj+1cFfpOPk3WxBv9
-2pRMP8F5FznqG85rqG/Yj1A/sF+jf7FfYfyRY70d25Ja5FTbwj1YpPP2iLIg
-j8cJI47593PTF4ZkN0xQMWvs/8ix3yHHfEYeFF0eqpxmTlrnMRNdDlgw7zuo
-T8jxfOSKG4npMmU3l55V7hdhb8nwK9cDFqf5mFHrGLds3iol069Rf5CjviBH
-fyM/EnNJeHXo/VFWbIxRv2/J8IKdic6fBdRwRw4/ua++rmD2oz/l786uMHn2
-ccnGhzUu7wxn8hvX6F/kqCfIUS+Qo/+RY/yRn7417M/pPDEpgqXuIlcr+nn3
-vt4CoRkt+scXZZrHKiY+yLE/IMf5GTnOf8jR38i7/1i2Y16fip5Wrplw86ol
-s84tXz5fJ7Ghq5FnM9bnqpj3Uaw/5Fh/yDF+yDF+yLE+kGN8cB7F+Qc5znfI
-cf5BjnqKHOsHOcYP45FsmmG8ZWdD2Tl+539cIGXyuczjovedZ0bOd79YtnyN
-FbNGfUCO/Qg51jvypdXT9p7d9YpTn+9aFR1pzfAC5eOohS4vuNaw/yyJyLBk
-6u1k1b1mbo4lxZ8WOXkcYON9gl9U1pM+9F4QGxe0vW4Y870B44Mc44Mc6ws5
-2o8c7UfOi3kzY/06PsVxSebdvlZv1RPktV+vCXcrkFKy26WwB32WzBr1hdkP
-8UWO+oMc/YMc7UPe1nXsp/pCC9KdCSsJlVkz8V7qOWa/8aoVaXoOX67LkDM8
-2EjVZZ9akvM9x2T/o+YMx/dLzBc8HzmejxzPx3zGfo7+QL1Cf2C9f/84p1H9
-zJqmvZdlPBXWy3yvxnkTn7cuzml7MqQXXm6uK/wyBcz3LOQ4PyLH+Ry/B2A8
-kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
+1:eJyFmHs01GkYx8fQ3BjGDFG7Z4uui7TR5XTh93Rd6RSpU1K0iKiI02V3j1VH
+mkouIymtLcclrSinZHUTpWRyiZqTrNO2CqclITvIbWx/tP983z/MOfPHcz7v
+7533/T7P833f31j57fUI0OfxeGmfv/wv31t2vTdDbsvJUlF7M1X8irth4tXe
+JDamuHtL7FfYvGfi9j/10q1qZLTY4eFLcbAeIX9SmXaqMNmUdD4/ehsWsM9L
+E5/HhtyQ0IKZXecblurY+dPKs2Oe6VF6iXBVv10zNy/4bLN2nJSMnNeUHX/X
+wvmF2sdN3iUjja//moHoIYY7lmtT3Pwl5D46PS98lZbhPVH8zNM2UqrMcMv2
+jdUy88WvTdY4+QnpRNYhVW5qDzP+0v0Oj7JHetRvWH/2mTefkmIP5j9MMKPH
+S082lFp2cagncpwPeehT78vPBJZ08jfzGr30PoZXXKWHi5VmlNleHOaSO8Rw
+V6nMUtppSf4Xy+53a7uZ8Uaemm8yNcYUHezyoLxUx+xnW9J0XcTQENdZdfZ8
+o6shoR6YP+TyBOF8ba2I9v8aZqPaW89wZ6fUu5GJxpSz9ztnByt9Zn6uoHDi
+Yxc+9aSc838epePCth5Zm6+0ID/r7rzlm0aZ/SDH/SPX5MjsDutbUHxEVLFp
+hJCQn3RUbo3fOp7cWmoW3rHpYcYv6M2euEUtp6KvB12TXhkR6qlQzXaJDBGR
+elBtOmxqwHDsD+Tzw/nCCSMKagvoUrnmj2OeR32Q99vclfRJ5RTI0wRanhNQ
+XM6LV77rTaku3Dfz/jwtU5/IsR+QY38hR/2QP/3FLGDJGxNyWC4OORSuRxgX
+nBPscH1tSIphfV6rp4BQz4pZ0trj+/Vp9Vxz55gLgxzG6WK7V+HTxFTvbr0w
+Tq3HjN/IowtWM/WoW/dUrUnuZ57fnv0pWlInpMC/2u1m9Q4wXBoVfPjItVHO
+o7++o8Ksg/HDhD/OlM7YKadHQUp9wQY+Yb6xX5HPmWKtro40pjKfJUPq2i6m
+37BfkaPe6KfYb8gLVb72EtF7rviEiZd0SycT8758fmp+PXwvr4/pd/Rz5OjH
+yFuyRQsNagzI1bFX8e/uTibG/CLH/CI3W1naHL5In4I0b1qHjqsZbj1zQ0z9
+RSFpIuznOcT2Mfm4aRW5+0KGCf2vA3KsH+TzK76KzfpdTmmbsycl2rPzj/X7
+nsmJtwLOGFHnAXnvxhXDjF+gn6HfKpN1TrmbFTRdODupt9qA0E/SBysm2r7o
+5ppat1m5HdMn9BOlV8lA9CJzavyQ0BZ//XPdwPh04+DVc653cIH/BMyzXSch
+1AvrA/NZYtuiDPvWiBTvR3P2BYsI9cT6R45+iP2K9Y/5wPVhveDzmC9cH3Jc
+33DKhi7/S2Y0Y3Kx24NGI1r1ZJuPqFtG7tVFa2iRhInRb5BjPSDHekA+7dOO
+KSszhLTRxGdZyRVj5rzD+ZFjvSCXH0vxfnlLRtqjt9u9xCYM3yxQW1SFSqgy
+7eAuyUdjpl7xfEKO5wly1Bv5Cc8blzziFfR2SXrmHi8xw+ui3CfVV1pQ+eo7
+jg0N7HjUc2DugYa2nTKKjHZdphswYOobYzzvkKPfI0f9kaP+yDH/yE9nHLQK
+OSWg2t6Jyap3Apqatu79aXshpdUOTBj4yCO8HyDH/CBH/0aO/occ9UZ++YAq
+dySnn9uZlmHrZMNn4j1tIvFoehNn3nS3IEXGH/M+ghz7EznmDzn2J3LsD+SY
+H/RrfL9Ajvdr5HgfRo5+ihz7BznmD/OxJ1dS3lj3getWilSOyhEO67nIXWFT
+sN2UspuqZsTkiZgY/QM5nkfIsd+R23cHTV04bEZVb69F6BQsL3qiOr/sZwV1
+TJjrEJ0lY/qtITy0OLVmgLPj5PmeAhMm32Kfu98v/zjCWSc4uRVmGDP3Tcwf
+cswPcuwv5Lh/5Lh/5Ir1FY5HxxvRxdlrHSwlBmP6CfL6XaYj/lUGVFrWeSVj
+AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
+/VBnZmkhYeohsN4pVVzdxzn3O4oerzBkON6/sF5wfuQ4P3KcH+sZz3PUA/0K
+9cB+x/Xi/QrfR8byC3weOb7vIMf7Lv5fgvlAPpbeuD7UG/f3H/KYxfw=
          "], 
-         0.04844424021232023]}, 
+         0.0496612152473237]}, 
        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.5489788908088125, 0.7816529589144565}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.681082605685496, 0.43808620405279575}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1352,8 +1257,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.8849567662637408, 1.9730900415238195}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.754823523400739, 0.8489094641753794}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1376,8 +1282,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.461788996094683, 0.4648414194061168}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.627908494975737, 0.6532629771044767}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1400,8 +1307,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.5083400533946127, 0.7843783720909796}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.103639784177718, 1.7197201676227578}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1423,7 +1331,10 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           $CellContext`ChessPosition[{{1, 1}, {1, 3}, {3, 1}, 0}], 
           "Tooltip"]& ], 
         TagBox[
-         TooltipBox[DiskBox[{3.0886180029327175, 0.}, 0.04844424021232023],
+         TooltipBox[
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.298491656453416, 1.2671982465398806}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1446,8 +1357,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.3124550943833335, 1.0442967514530916}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.645789399816061, 1.2840286691153886}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1470,8 +1382,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.9413279826886969, 0.7136126362999726}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.139418340669083, 0.9717711667345206}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1494,8 +1407,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.009264599461776, 1.55882445568603}, 0.04844424021232023],
-          
+          {RGBColor[1, 0, 0], 
+           DiskBox[{6.0066591704850065, 1.4140642176732592}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1518,8 +1432,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.586900691548109, 0.7237083306379821}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.130110789129907, 1.729072990782392}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1542,8 +1457,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.1235444993498673, 0.01413870115386695}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{6.232471824626666, 1.0597999124240907}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1566,8 +1482,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.2077512653113756, 2.3752299385045617}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{2.22107376847278, 2.2958099159309273}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1590,8 +1507,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.498030496730581, 1.9014094845223868}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.922969487155291, 1.1627603154431387}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1614,8 +1532,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.0025391675674216, 0.7398149362047386}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.880547724801417, 1.9585606304482543}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1638,8 +1557,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{0.6356984361435782, 2.2140823566303927}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.753414810673536, 2.9350924231543503}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1662,8 +1582,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.8162211385754121, 0.219120447087223}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.589406423573459, 1.135431505010519}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1686,8 +1607,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.483139218373201, 1.5159856257745856}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.8533365638968515, 1.9218194532500952}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1710,8 +1632,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.719240561093154, 1.0976941592579246}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.329474878826783, 1.2631231635087836}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1734,8 +1657,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.2959014103570334, 2.9857732431893704}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.9849784752728743, 2.180416919560593}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1758,8 +1682,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.220481474800162, 2.0907558899642917}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.0534616126550502, 2.5087815656146155}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1782,8 +1707,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.4579842590402783, 3.307662896378289}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.4318996597191673, 1.6634609627829084}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1806,7 +1732,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.132698873179979, 3.182076859109629}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.200323581803312, 2.176288304943481}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1829,8 +1757,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.233103399797201, 1.3221647342489167}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.395220065419104, 0.8654839349282779}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1853,8 +1782,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.598148269211123, 1.5280624989606564}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.3376112865098606, 1.891075718902824}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1877,7 +1807,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.15498401130922, 2.7592352814342846}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.227313323110015, 0.5992390029695862}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1900,8 +1832,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{5.521237471003255, 2.8120344352119555}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{0.8447314172631111, 0.9483706244466457}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1924,32 +1857,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.2805528243085105, 3.515595911936327}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{3.2753447986544932, 1.6450433481251545}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.101540014367637, 0.350559035725744}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1972,8 +1882,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.3216448589497567, 3.029177711260493}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.6001057105793155, 0.9506774320412685}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -1996,31 +1907,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.604574516200969, 2.367696649794784}, 0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\[WhiteRook]", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.2866283518778414, 2.3609582266269244}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.811425746480744, 0.9941143900823237}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2043,8 +1932,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.634417781973444, 0.5166476824956505}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.9971657843819255, 2.710103153699255}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2067,8 +1957,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.4955838331980504, 3.239976853570652}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.8205523163266255, 2.3912091120273153}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2091,8 +1982,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.902779775430847, 1.6374371549645153}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.285534104003346, 1.906694783255713}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2115,31 +2007,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.191967996750165, 2.570026655928665}, 0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{1.7416514056864543, 2.785771970538598}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.513633887933557, 2.824265292467362}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2162,8 +2032,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.749883387513107, 2.6051775611323684}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{1.0520430608882307, 2.440580616614838}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2186,483 +2057,8 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.6789816498757437, 3.65729713345356}, 0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.4109893323072953, 4.439735525748503}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\[WhiteRook]", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.6645527792181083, 2.629701355982347}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\[WhiteRook]", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 2}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 2}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.113740412416452, 4.1613007201396}, 0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{0.21106994914207622, 2.8018691655417576}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{0.9613496913703952, 3.021855092842528}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\[WhiteRook]"}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{0.4371836989790956, 3.3494967568260505}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\[WhiteRook]"}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 3}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 3}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[DiskBox[{0., 2.172544452828305}, 0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{1.570836404244507, 2.501993450798217}, 0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\[WhiteRook]", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 1}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 1}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{1.168668784286505, 2.2385925752775204}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\[WhiteRook]", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.094702296998528, 2.8241273846166273}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\[WhiteRook]"}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{1.756459054077151, 3.4795420363929432}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\[WhiteRook]"}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{3.1237061724695288, 2.9421342694251447}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 2}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 2}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{1.0056055337453134, 3.328814753671437}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.8883377615318113, 3.2024745565265325}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\[WhiteRook]"}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{3.577982321043876, 2.8674539404586743}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\[WhiteRook]"}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.5684763530489976, 3.4545870220368307}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\[WhiteRook]", "\" \"", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{4.223520777920108, 2.0589218222460044}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[WhiteRook]", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{1.7809697985527935, 2.1236247231685654}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\[WhiteRook]", "\" \""}, {
-              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{5.563233903554228, 2.5130125015751257}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 1}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 1}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{2.154542848127062, 1.5909041818870218}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.953913535839287, 0.}, 0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2685,7 +2081,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.733024543115203, 4.182639662282209}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.143283577054902, 2.222923704490408}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2708,7 +2106,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.488626748249484, 4.082197304003973}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.144595364108719, 1.4738347858510075}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2731,8 +2131,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.2495531584773, 2.2973493683814175}, 0.04844424021232023],
-          
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.976582556748937, 1.6223575357997446}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2755,7 +2156,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.919584101665947, 4.038045014723073}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{1.9805932023082875, 0.8775367379928218}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2778,8 +2181,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.5828830110184746, 2.902565282520836}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.663709806032605, 1.3863679157416082}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2802,8 +2206,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.9318137783265144, 2.188336393210098}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.403537539743988, 0.1916499016257618}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2826,8 +2231,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.0887341269132484, 2.4959450176131783}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.955487320757144, 1.4089834287076328}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2850,8 +2256,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.321780613924348, 3.8064149315317577}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.57294792357656, 1.7666825841073392}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2874,7 +2281,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{0.8076351910668373, 4.37230028073982}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.162490596272615, 3.6068140248571754}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2897,8 +2306,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.7728348655342208, 4.038939184175481}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.234406923688146, 3.2784429469261696}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2921,8 +2331,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.2810307997050445, 3.5956212801470144}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.695652405146851, 3.6077009065225765}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2945,8 +2356,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.3854130223474417, 3.8122140831215896}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.835610359824504, 2.600077764568499}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2969,8 +2381,8 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.1237020628687173, 4.568071379836065}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.88801060170784, 3.169152517809935}, 0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -2993,8 +2405,8 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{0.3495188155627278, 3.5897003252907234}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.94808243683697, 2.605881122705997}, 0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3017,7 +2429,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.7028749593620798, 3.76473205396821}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.101477987436049, 2.6220669917096857}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3040,7 +2454,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.243623824327238, 3.989921514228419}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.5202341518647406, 3.0514901354885153}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3063,7 +2479,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.876817661903235, 4.212641888599427}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.897743070923541, 2.1181509045945424}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3086,7 +2504,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.245366697135514, 4.671608557390499}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{1.4787575399890136, 2.270624485845292}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3109,7 +2529,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.48654176581348, 3.9122322163959575}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.4835403265488702, 2.793405532952883}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3132,8 +2554,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{0.9228299034536249, 2.7748163072374137}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.3071440718109715, 2.21169645755229}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3156,7 +2579,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{5.25674537288721, 4.17319344889158}, 0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{0.51965286030399, 2.2581018413147924}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3179,8 +2604,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.3786722367472661, 4.524873194090473}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.180509054539941, 3.8795679414621365}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3203,8 +2629,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.5551207387650716, 4.834285885413763}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.3434530805863485, 3.0837576970189553}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3227,8 +2654,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.1504201054485055, 4.368328692459468}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.9537451520145788, 3.8343472657160564}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3251,8 +2679,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.9114328128843754, 3.916016907929806}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.3040983064573015, 3.8676956479501756}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3275,8 +2704,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{1.4435954498779127, 4.0377447814632355}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.60073756552937, 2.2905388140762586}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3299,8 +2729,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.6251047555628686, 4.796891004336214}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.821008931572757, 2.8630668230750653}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3323,8 +2754,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{3.0899380917730745, 4.745904768304527}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{2.5993118067684504, 2.027163840328597}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3347,8 +2779,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.557860967344043, 3.93419674797298}, 0.04844424021232023],
-          
+          {RGBColor[0, 0, 1], 
+           DiskBox[{1.6126963959314846, 3.878098831111762}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3371,8 +2804,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.405242141394763, 3.7321288923124376}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{1.8714020540263638, 3.8289571943912657}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3395,8 +2829,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{0.9510018549978354, 5.120602920047919}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{5.246311730294151, 3.1347627318722053}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3419,8 +2854,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{0.692781682774231, 4.6557323276333396}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{4.868418165470237, 4.159680160932549}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3443,8 +2879,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{2.168138921217178, 4.8290635579759345}, 
-           0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{3.510994343300021, 2.5049289636426284}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3467,7 +2904,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.438349806293881, 5.010211042454763}, 0.04844424021232023],
+          {RGBColor[1, 0, 0], 
+           DiskBox[{1.2505703365487602, 1.9828222656274443}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3490,8 +2929,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{5.220416585964285, 1.65370652325812}, 0.04844424021232023],
-          
+          {RGBColor[0, 0, 1], 
+           DiskBox[{1.555919095403473, 3.261276400193361}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3514,8 +2954,8 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{5.9936146623426705, 3.355778006894547}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{0., 1.4169292333374113}, 0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3538,11 +2978,11 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{5.274280245459995, 2.3312288611252003}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{0.9317449425191859, 1.8450198733556782}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
-            
             GridBox[{{"\" \"", "\" \"", "\" \""}, {
               "\" \"", "\" \"", "\[BlackKing]"}, {
               "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
@@ -3562,8 +3002,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.778311513991144, 3.1220226104664803}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{1.7488975456009461, 3.411549781181285}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3586,56 +3027,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{4.9218462575950745, 3.453055683638893}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{5.274154547134813, 3.0330765348536115}, 
-           0.04844424021232023],
-          InterpretationBox[
-           TagBox[
-            
-            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
-              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
-              AutoDelete -> False, 
-             GridBoxBackground -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
-             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
-             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
-            "Grid"], 
-           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 0}]]],
-         Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 0}], 
-          "Tooltip"]& ], 
-        TagBox[
-         TooltipBox[
-          DiskBox[{4.626754123774027, 3.1906081448188575}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{1.4248138451634076, 3.408580841146345}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3658,8 +3052,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          DiskBox[{5.186301945998018, 3.6579398275788506}, 
-           0.04844424021232023],
+          {RGBColor[0, 0, 1], 
+           DiskBox[{0.8966299470707391, 3.28816835133789}, 
+            0.0496612152473237]},
           InterpretationBox[
            TagBox[
             
@@ -3694,9 +3089,9 @@ kL8tHvj/Ue/QfuR4P+Q4r2O88XzkeD/MB/T//wDK+8r6
    3.866194641575255*^9, {3.86619472905732*^9, 3.866194815452359*^9}, 
    3.866194859083168*^9, 3.866197365585835*^9, 3.866198397717765*^9, 
    3.866198803374255*^9, 3.866199007439185*^9, 3.8662015233165693`*^9, 
-   3.8662020762440453`*^9},
+   3.8662020762440453`*^9, 3.866203403389288*^9, 3.866206910205411*^9},
  CellLabel->
-  "Out[365]=",ExpressionUUID->"9815e63f-174d-49c9-9528-5ab330786191"]
+  "Out[385]=",ExpressionUUID->"b0d7c896-584c-4a85-9152-700b9a879152"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -3720,28 +3115,21 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 223, 4, 69, "Chapter",ExpressionUUID->"c23ca8fd-446d-40eb-a92d-efeedb803f29"],
 Cell[806, 28, 1733, 46, 51, "Input",ExpressionUUID->"176a5365-1558-45cf-a0bf-2cf6d3b06b40"],
-Cell[2542, 76, 5836, 182, 236, "Input",ExpressionUUID->"95411f1d-0bbd-44f9-88c1-039f4e2acbf6"],
-Cell[8381, 260, 4174, 106, 319, "Input",ExpressionUUID->"7d6c6976-e4d9-4289-a2df-631cad1123fc"],
-Cell[12558, 368, 1246, 34, 29, "Input",ExpressionUUID->"9ac0766f-9117-41ae-b520-d61a33fc2b16"],
-Cell[13807, 404, 3440, 90, 92, "Input",ExpressionUUID->"d9a4ba31-d9db-4a7f-8638-6d71b6bcf4d4"],
-Cell[17250, 496, 4493, 114, 236, "Input",ExpressionUUID->"b18146c7-2ae7-463b-9724-6f7d6f88fc96"],
+Cell[2542, 76, 7337, 222, 298, "Input",ExpressionUUID->"95411f1d-0bbd-44f9-88c1-039f4e2acbf6"],
+Cell[9882, 300, 4174, 106, 319, "Input",ExpressionUUID->"7d6c6976-e4d9-4289-a2df-631cad1123fc"],
+Cell[14059, 408, 1246, 34, 29, "Input",ExpressionUUID->"9ac0766f-9117-41ae-b520-d61a33fc2b16"],
+Cell[15308, 444, 3440, 90, 92, "Input",ExpressionUUID->"d9a4ba31-d9db-4a7f-8638-6d71b6bcf4d4"],
+Cell[18751, 536, 4493, 114, 236, "Input",ExpressionUUID->"b18146c7-2ae7-463b-9724-6f7d6f88fc96"],
+Cell[23247, 652, 406, 11, 29, "Input",ExpressionUUID->"67ab1289-2e77-46eb-919d-c88edae88b05"],
+Cell[23656, 665, 3667, 82, 154, "Input",ExpressionUUID->"8e62f9d6-59fe-4cf8-8b35-60bf81eb9b61"],
+Cell[27326, 749, 818, 16, 29, "Input",ExpressionUUID->"f7d8459f-8f67-4ad6-a1b7-e5f907b709ca"],
+Cell[28147, 767, 3492, 89, 178, "Input",ExpressionUUID->"e600b474-3df5-483a-a394-b2c21cfdab46"],
+Cell[31642, 858, 342, 9, 29, "Input",ExpressionUUID->"090d42c9-ae27-4a84-8b60-241e1b32f5e7"],
+Cell[31987, 869, 747, 17, 29, "Input",ExpressionUUID->"23ef9c27-963f-41ef-af6f-bdaf1e489bd6"],
+Cell[32737, 888, 540, 16, 29, "Input",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
 Cell[CellGroupData[{
-Cell[21768, 614, 435, 12, 29, "Input",ExpressionUUID->"f9269244-b067-409c-aaed-382eb9670006"],
-Cell[22206, 628, 943, 21, 80, "Output",ExpressionUUID->"b7581977-1ffa-45e6-98c3-679a399230d8"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[23186, 654, 479, 13, 29, "Input",ExpressionUUID->"8dfcb3b5-63a9-4496-bfb7-27a8bf56a9eb"],
-Cell[23668, 669, 4363, 96, 81, "Output",ExpressionUUID->"4711e743-8e88-40a7-9a6d-5ffb2cba76a2"]
-}, Open  ]],
-Cell[28046, 768, 406, 11, 29, "Input",ExpressionUUID->"67ab1289-2e77-46eb-919d-c88edae88b05"],
-Cell[28455, 781, 3667, 82, 154, "Input",ExpressionUUID->"8e62f9d6-59fe-4cf8-8b35-60bf81eb9b61"],
-Cell[32125, 865, 818, 16, 29, "Input",ExpressionUUID->"f7d8459f-8f67-4ad6-a1b7-e5f907b709ca"],
-Cell[32946, 883, 3492, 89, 178, "Input",ExpressionUUID->"e600b474-3df5-483a-a394-b2c21cfdab46"],
-Cell[36441, 974, 342, 9, 29, "Input",ExpressionUUID->"090d42c9-ae27-4a84-8b60-241e1b32f5e7"],
-Cell[36786, 985, 699, 16, 29, "Input",ExpressionUUID->"23ef9c27-963f-41ef-af6f-bdaf1e489bd6"],
-Cell[CellGroupData[{
-Cell[37510, 1005, 504, 10, 29, "Input",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
-Cell[38017, 1017, 137323, 2681, 593, "Output",ExpressionUUID->"9815e63f-174d-49c9-9528-5ab330786191"]
+Cell[33302, 908, 660, 12, 29, "Input",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
+Cell[33965, 922, 110073, 2171, 498, "Output",ExpressionUUID->"b0d7c896-584c-4a85-9152-700b9a879152"]
 }, Open  ]]
 }, Open  ]]
 }
