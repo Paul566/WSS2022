@@ -8532,7 +8532,7 @@ eeM3ep15Pht8Uc93zt/l18H//X/4bvgXkM/fQg==\
 }, Open  ]]
 },
 WindowSize->{693, 762},
-WindowMargins->{{Automatic, 0}, {0, Automatic}},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 FrontEndVersion->"13.0 for Linux x86 (64-bit) (December 2, 2021)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f00f1f4d-405b-4c51-9848-986aa0a28d77"
