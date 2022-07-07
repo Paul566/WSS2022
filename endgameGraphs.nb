@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    145917,       3130]
-NotebookOptionsPosition[    144066,       3097]
-NotebookOutlinePosition[    144458,       3113]
-CellTagsIndexPosition[    144415,       3110]
+NotebookDataLength[    147860,       3186]
+NotebookOptionsPosition[    145912,       3152]
+NotebookOutlinePosition[    146304,       3168]
+CellTagsIndexPosition[    146261,       3165]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -888,21 +888,74 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{
+   RowBox[{"colorFunction", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"w1_", ",", "w2_"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"b1_", ",", "b2_"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r1_", ",", "r2_"}], "}"}], ",", "m_"}], "}"}], "]"}], ":=", 
+   RowBox[{"If", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"r1", "==", 
+      RowBox[{"-", "1"}]}], ",", "Blue", ",", 
+     RowBox[{"(*", 
+      RowBox[{"the", " ", "rook", " ", "is", " ", "captured"}], "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", 
+         RowBox[{"nextPositions", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"w1", ",", "w2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"b1", ",", "b2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"r1", ",", "r2"}], "}"}], ",", "m"}], "}"}], "]"}], 
+         "]"}], ">", "0"}], ",", "Gray", ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"not", " ", "mate"}], ",", " ", 
+         RowBox[{"not", " ", "stalemate"}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"validPosition", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"w1", ",", "w2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"b1", ",", "b2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+            RowBox[{"1", "-", "m"}]}], "}"}], "]"}], ",", "Yellow", ",", 
+         RowBox[{"(*", "stalemate", "*)"}], "\[IndentingNewLine]", "Red"}], 
+        "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.866207131830352*^9, 3.866207319386389*^9}, {
+  3.866207351925233*^9, 3.8662073975311337`*^9}, {3.8662074321954823`*^9, 
+  3.866207432250173*^9}},
+ CellLabel->
+  "In[390]:=",ExpressionUUID->"7caa68da-321a-443a-b297-753e5f4d127b"],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{"vertexStyle", "=", 
    RowBox[{
     RowBox[{
      RowBox[{"#", "->", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"#", "[", 
-          RowBox[{"[", 
-           RowBox[{"3", ",", "1"}], "]"}], "]"}], "==", 
-         RowBox[{"-", "1"}]}], ",", "Blue", ",", "Red"}], "]"}]}], "&"}], "/@",
-     "positions"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.866203359583479*^9, 3.866203395290142*^9}},
+      RowBox[{"colorFunction", "[", "#", "]"}]}], "&"}], "/@", 
+    "positions"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.866203359583479*^9, 3.866203395290142*^9}, {
+  3.8662074156021967`*^9, 3.866207418492297*^9}},
  CellLabel->
-  "In[384]:=",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
+  "In[391]:=",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
 
 Cell[CellGroupData[{
 
@@ -916,9 +969,11 @@ Cell[BoxData[
   3.866109793401802*^9, 3.866109810006317*^9}, {3.866109896482335*^9, 
   3.866109911611514*^9}, {3.866192888135078*^9, 3.866193030099763*^9}, {
   3.8661945962330637`*^9, 3.866194600546522*^9}, {3.866203312411459*^9, 
-  3.866203316968158*^9}, {3.866203402066373*^9, 3.866203402841255*^9}},
+  3.866203316968158*^9}, {3.866203402066373*^9, 3.866203402841255*^9}, {
+  3.86620700359096*^9, 3.866207007938624*^9}, {3.866207064971817*^9, 
+  3.866207066804413*^9}},
  CellLabel->
-  "In[385]:=",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
+  "In[392]:=",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -1114,80 +1169,79 @@ HY6/3rjRP/Ombx7N+9W82rzr87Zv3+3jF2yfLu8=
            Tooltip], {{1, 1}, {1, 3}, {2, 1}, 1} -> Placed[
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {2, 1}, 1}], Tooltip]},
         VertexStyle -> {{{1, 2}, {3, 3}, {2, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {1, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {2, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {3, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {1, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {-1, -1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {2, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {3, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {1, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {2, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {3, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {1, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {3, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {-1, -1}, 0} -> 
          RGBColor[0, 0, 1], {{1, 2}, {3, 1}, {1, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {2, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {1, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {3, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {1, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {-1, -1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {3, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {2, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {3, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {-1, -1}, 1} -> 
          RGBColor[0, 0, 1], {{1, 2}, {3, 2}, {1, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {2, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {3, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {2, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 1}, {3, 3}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {2, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {3, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {2, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {3, 1}, 0} -> 
          RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {3, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {-1, -1}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {-1, -1}, 1} -> 
          RGBColor[0, 0, 1], {{1, 1}, {3, 3}, {3, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {2, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {1, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {2, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {-1, -1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {3, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 2}, {3, 2}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {2, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {3, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {-1, -1}, 0} -> 
          RGBColor[0, 0, 1], {{1, 1}, {1, 3}, {2, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {1, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {-1, -1}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 2}, {3, 1}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {3, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {-1, -1}, 0} -> 
          RGBColor[0, 0, 1], {{1, 1}, {1, 3}, {2, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {-1, -1}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {-1, -1}, 1} -> 
          RGBColor[0, 0, 1], {{1, 1}, {1, 3}, {-1, -1}, 1} -> 
          RGBColor[0, 0, 1], {{1, 2}, {3, 3}, {2, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {1, 3}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {3, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {1, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {3, 3}, 0} -> 
          RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {-1, -1}, 0} -> 
          RGBColor[0, 0, 1], {{1, 1}, {3, 3}, {2, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {2, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {1, 3}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {-1, -1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {1, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {-1, -1}, 1} -> 
          RGBColor[0, 0, 1], {{1, 1}, {2, 3}, {3, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {2, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {1, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {3, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 1}, {2, 3}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {1, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {1, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {1, 1}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {3, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 1}, {3, 3}, {1, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {3, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {1, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {1, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {3, 3}, 0} -> 
          RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {3, 3}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {1, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {2, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {1, 1}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 3}, {-1, -1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {1, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 2}, {3, 2}, {1, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 3}, {-1, -1}, 0} -> 
          RGBColor[0, 0, 1], {{1, 2}, {3, 3}, {2, 2}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {-1, -1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {-1, -1}, 1} -> 
          RGBColor[0, 0, 1], {{1, 2}, {3, 3}, {3, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {1, 3}, {1, 2}, 0} -> 
-         RGBColor[1, 0, 0], {{1, 2}, {3, 2}, {-1, -1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {1, 3}, {1, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {-1, -1}, 0} -> 
          RGBColor[0, 0, 1], {{1, 2}, {3, 2}, {2, 3}, 1} -> 
-         RGBColor[1, 0, 0], {{1, 1}, {2, 3}, {2, 1}, 0} -> 
-         RGBColor[1, 0, 0]}}]]}, 
+         GrayLevel[0.5], {{1, 1}, {2, 3}, {2, 1}, 0} -> GrayLevel[0.5]}}]]}, 
     TagBox[GraphicsGroupBox[{
        {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.019920352889159863`], 
         ArrowBox[CompressedData["
@@ -1232,7 +1286,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.681082605685496, 0.43808620405279575}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1257,7 +1311,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.754823523400739, 0.8489094641753794}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1282,7 +1336,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.627908494975737, 0.6532629771044767}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1307,7 +1361,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.103639784177718, 1.7197201676227578}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1332,7 +1386,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {RGBColor[1, 1, 0], 
            DiskBox[{3.298491656453416, 1.2671982465398806}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1357,7 +1411,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.645789399816061, 1.2840286691153886}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1382,7 +1436,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{5.139418340669083, 0.9717711667345206}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1407,7 +1461,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {RGBColor[1, 1, 0], 
            DiskBox[{6.0066591704850065, 1.4140642176732592}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1432,7 +1486,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{5.130110789129907, 1.729072990782392}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1457,7 +1511,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {RGBColor[1, 1, 0], 
            DiskBox[{6.232471824626666, 1.0597999124240907}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1507,7 +1561,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.922969487155291, 1.1627603154431387}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1532,7 +1586,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{5.880547724801417, 1.9585606304482543}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1553,11 +1607,11 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
             "Grid"], 
            $CellContext`ChessPosition[{{1, 1}, {1, 3}, {3, 1}, 1}]]],
          Annotation[#, 
-          $CellContext`ChessPosition[{{1, 1}, {1, 3}, {3, 1}, 1}], 
-          "Tooltip"]& ], 
+          $CellContext`ChessPosition[{{1, 1}, {1, 3}, {3, 1}, 1}], "Tooltip"]& ]\
+, 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{5.753414810673536, 2.9350924231543503}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1607,7 +1661,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.8533365638968515, 1.9218194532500952}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1632,7 +1686,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.329474878826783, 1.2631231635087836}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1657,7 +1711,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.9849784752728743, 2.180416919560593}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1682,7 +1736,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.0534616126550502, 2.5087815656146155}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1707,7 +1761,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.4318996597191673, 1.6634609627829084}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1732,7 +1786,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.200323581803312, 2.176288304943481}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1757,7 +1811,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.395220065419104, 0.8654839349282779}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1782,7 +1836,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.3376112865098606, 1.891075718902824}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1807,7 +1861,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.227313323110015, 0.5992390029695862}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1857,7 +1911,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.101540014367637, 0.350559035725744}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1882,7 +1936,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.6001057105793155, 0.9506774320412685}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1907,7 +1961,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.811425746480744, 0.9941143900823237}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1932,7 +1986,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.9971657843819255, 2.710103153699255}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1957,7 +2011,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.8205523163266255, 2.3912091120273153}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -1982,7 +2036,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.285534104003346, 1.906694783255713}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2007,7 +2061,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.513633887933557, 2.824265292467362}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2057,7 +2111,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.953913535839287, 0.}, 0.0496612152473237]},
           InterpretationBox[
            TagBox[
@@ -2081,7 +2135,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.143283577054902, 2.222923704490408}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2106,7 +2160,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {RGBColor[1, 1, 0], 
            DiskBox[{2.144595364108719, 1.4738347858510075}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2131,12 +2185,11 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.976582556748937, 1.6223575357997446}, 
             0.0496612152473237]},
           InterpretationBox[
            TagBox[
-            
             GridBox[{{"\" \"", "\[WhiteRook]", "\[BlackKing]"}, {
               "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
               AutoDelete -> False, 
@@ -2156,7 +2209,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{1.9805932023082875, 0.8775367379928218}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2181,7 +2234,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.663709806032605, 1.3863679157416082}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2206,7 +2259,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.403537539743988, 0.1916499016257618}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2231,7 +2284,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.955487320757144, 1.4089834287076328}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2256,7 +2309,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {RGBColor[1, 1, 0], 
            DiskBox[{3.57294792357656, 1.7666825841073392}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2281,7 +2334,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{5.162490596272615, 3.6068140248571754}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2306,7 +2359,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.234406923688146, 3.2784429469261696}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2331,7 +2384,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.695652405146851, 3.6077009065225765}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2356,7 +2409,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.835610359824504, 2.600077764568499}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2381,7 +2434,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.88801060170784, 3.169152517809935}, 0.0496612152473237]},
           InterpretationBox[
            TagBox[
@@ -2429,7 +2482,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.101477987436049, 2.6220669917096857}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2454,7 +2507,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.5202341518647406, 3.0514901354885153}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2479,7 +2532,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.897743070923541, 2.1181509045945424}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2504,7 +2557,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{1.4787575399890136, 2.270624485845292}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2529,7 +2582,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.4835403265488702, 2.793405532952883}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2554,7 +2607,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{5.3071440718109715, 2.21169645755229}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2604,7 +2657,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.180509054539941, 3.8795679414621365}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2629,7 +2682,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.3434530805863485, 3.0837576970189553}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2654,7 +2707,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.9537451520145788, 3.8343472657160564}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2679,7 +2732,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.3040983064573015, 3.8676956479501756}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2704,7 +2757,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.60073756552937, 2.2905388140762586}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2729,7 +2782,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.821008931572757, 2.8630668230750653}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2754,7 +2807,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{2.5993118067684504, 2.027163840328597}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2854,7 +2907,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{4.868418165470237, 4.159680160932549}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2879,7 +2932,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{3.510994343300021, 2.5049289636426284}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2904,7 +2957,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
           "Tooltip"]& ], 
         TagBox[
          TooltipBox[
-          {RGBColor[1, 0, 0], 
+          {GrayLevel[0.5], 
            DiskBox[{1.2505703365487602, 1.9828222656274443}, 
             0.0496612152473237]},
           InterpretationBox[
@@ -2983,6 +3036,7 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
             0.0496612152473237]},
           InterpretationBox[
            TagBox[
+            
             GridBox[{{"\" \"", "\" \"", "\" \""}, {
               "\" \"", "\" \"", "\[BlackKing]"}, {
               "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
@@ -3089,9 +3143,10 @@ AY+J0X+QY36Ro/8gR32Q4/6Q35oTL9nE13LhQZKXWbdHOcy359W/dxu2fuL2
    3.866194641575255*^9, {3.86619472905732*^9, 3.866194815452359*^9}, 
    3.866194859083168*^9, 3.866197365585835*^9, 3.866198397717765*^9, 
    3.866198803374255*^9, 3.866199007439185*^9, 3.8662015233165693`*^9, 
-   3.8662020762440453`*^9, 3.866203403389288*^9, 3.866206910205411*^9},
+   3.8662020762440453`*^9, 3.866203403389288*^9, 3.866206910205411*^9, 
+   3.8662070900902357`*^9, {3.866207421944068*^9, 3.866207441870234*^9}},
  CellLabel->
-  "Out[385]=",ExpressionUUID->"b0d7c896-584c-4a85-9152-700b9a879152"]
+  "Out[392]=",ExpressionUUID->"76fdfa4f-7ebf-4291-a798-a0cce16dc621"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -3126,10 +3181,11 @@ Cell[27326, 749, 818, 16, 29, "Input",ExpressionUUID->"f7d8459f-8f67-4ad6-a1b7-e
 Cell[28147, 767, 3492, 89, 178, "Input",ExpressionUUID->"e600b474-3df5-483a-a394-b2c21cfdab46"],
 Cell[31642, 858, 342, 9, 29, "Input",ExpressionUUID->"090d42c9-ae27-4a84-8b60-241e1b32f5e7"],
 Cell[31987, 869, 747, 17, 29, "Input",ExpressionUUID->"23ef9c27-963f-41ef-af6f-bdaf1e489bd6"],
-Cell[32737, 888, 540, 16, 29, "Input",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
+Cell[32737, 888, 2149, 56, 195, "Input",ExpressionUUID->"7caa68da-321a-443a-b297-753e5f4d127b"],
+Cell[34889, 946, 406, 11, 29, "Input",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
 Cell[CellGroupData[{
-Cell[33302, 908, 660, 12, 29, "Input",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
-Cell[33965, 922, 110073, 2171, 498, "Output",ExpressionUUID->"b0d7c896-584c-4a85-9152-700b9a879152"]
+Cell[35320, 961, 757, 14, 29, "Input",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
+Cell[36080, 977, 109804, 2171, 498, "Output",ExpressionUUID->"76fdfa4f-7ebf-4291-a798-a0cce16dc621"]
 }, Open  ]]
 }, Open  ]]
 }
