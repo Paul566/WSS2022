@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    256932,       5321]
-NotebookOptionsPosition[    253616,       5268]
-NotebookOutlinePosition[    254007,       5284]
-CellTagsIndexPosition[    253964,       5281]
+NotebookDataLength[    349109,       7118]
+NotebookOptionsPosition[    345822,       7067]
+NotebookOutlinePosition[    346213,       7083]
+CellTagsIndexPosition[    346170,       7080]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5179,95 +5179,1894 @@ Cell[BoxData[
   "Out[776]=",ExpressionUUID->"bcf944db-c296-46bd-ba04-42af6b936a35"]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"With", "[", 
+ RowBox[{
   RowBox[{
-   RowBox[{"{", 
-    RowBox[{"walk", "=", 
-     RowBox[{"generateRandomWalk", "[", "]"}]}], "}"}], ",", 
-   RowBox[{
+   RowBox[{"generateResults", "[", "k_Integer", "]"}], ":=", 
+   RowBox[{"Table", "[", 
     RowBox[{
-     RowBox[{"Style", "[", 
-      RowBox[{"#", ",", "Large"}], "]"}], "&"}], "/@", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"First", "[", "walk", "]"}], ",", 
-      RowBox[{"Last", "[", "walk", "]"}]}], "}"}]}]}], "]"}]], "Input",
- CellChangeTimes->{{3.86635638535881*^9, 3.866356440627507*^9}, {
-  3.866357388729603*^9, 3.866357392559338*^9}},
+     RowBox[{"generateRandomWalkResult", "[", "]"}], ",", "k"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8663586917580843`*^9, 3.866358776696369*^9}, {
+  3.8663588557737093`*^9, 3.866358880477209*^9}},
  CellLabel->
-  "In[733]:=",ExpressionUUID->"74c637c7-5481-4738-9262-b5d2512f3e56"],
+  "In[786]:=",ExpressionUUID->"97fd2ed6-e477-4b2f-a53a-ea35598a1aa0"],
 
 Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   StyleBox[
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"1", ",", "2"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"3", ",", "2"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"1", ",", "1"}], "}"}], ",", "1"}], "}"}],
-    StripOnInput->False,
-    FontSize->Large], ",", 
-   StyleBox[
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"1", ",", "1"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"3", ",", "1"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"3", ",", "3"}], "}"}], ",", "0"}], "}"}],
-    StripOnInput->False,
-    FontSize->Large]}], "}"}]], "Output",
- CellChangeTimes->{3.866357392923596*^9, 3.866357657736354*^9},
+ RowBox[{
+  RowBox[{"results", "=", 
+   RowBox[{"generateResults", "[", "10000", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.86635888322381*^9, 3.8663589336192703`*^9}, 
+   3.8663591911028833`*^9},
  CellLabel->
-  "Out[733]=",ExpressionUUID->"def4ea8a-344a-411c-9dfd-589483ed3554"]
-}, Open  ]],
+  "In[799]:=",ExpressionUUID->"b0a5c896-a001-4715-8108-44d48d9a1cee"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"ChessPosition", "@", 
-  RowBox[{"First", "[", 
-   RowBox[{"generateRandomWalk", "[", "]"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.8663571472249393`*^9, 3.8663571583027697`*^9}},
+ RowBox[{"Graph", "[", 
+  RowBox[{"edges", ",", 
+   RowBox[{"VertexStyle", "\[Rule]", "vertexStyle"}], ",", 
+   RowBox[{"VertexLabels", "\[Rule]", "labels"}], ",", 
+   RowBox[{"VertexSize", "\[Rule]", 
+    RowBox[{"Normal", "[", 
+     RowBox[{
+      RowBox[{"Counts", "[", "results", "]"}], "/", "1000"}], "]"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8663589430219*^9, 3.8663589476402273`*^9}, {
+   3.866359024895611*^9, 3.866359104145378*^9}, {3.866359143743185*^9, 
+   3.8663591498205853`*^9}, 3.8663591897007513`*^9},
  CellLabel->
-  "In[734]:=",ExpressionUUID->"1d33ec26-a82a-436b-9f74-e64bcc47eaf6"],
+  "In[800]:=",ExpressionUUID->"b4acab3d-916c-4772-aea4-a77131b32adf"],
 
 Cell[BoxData[
- InterpretationBox[
-  TagBox[GridBox[{
-     {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
-     {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-     {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-    },
-    AutoDelete->False,
-    GridBoxBackground->{
-     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-      "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-        GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-        GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-        GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-        GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-    GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-    GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-   "Grid"],
-  $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 1}]]], "Output",
- CellChangeTimes->{{3.8663571517489357`*^9, 3.866357158656435*^9}, 
-   3.8663576577629337`*^9},
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{{{1, 1}, {3, 1}, {2, 1}, 0}, {{1, 1}, {3, 2}, {2, 1}, 1}, {{1, 
+        1}, {3, 1}, {1, 2}, 1}, {{1, 1}, {3, 1}, {2, 2}, 0}, {{1, 1}, {3, 
+        1}, {3, 2}, 0}, {{1, 1}, {3, 1}, {1, 3}, 0}, {{1, 1}, {3, 1}, {2, 2}, 
+        1}, {{1, 2}, {3, 1}, {2, 2}, 0}, {{1, 1}, {3, 1}, {1, 2}, 0}, {{1, 
+        1}, {3, 1}, {2, 3}, 0}, {{1, 1}, {3, 2}, {-1, -1}, 1}, {{1, 1}, {3, 
+        2}, {1, 3}, 1}, {{1, 1}, {3, 1}, {1, 3}, 1}, {{1, 2}, {3, 1}, {1, 3}, 
+        0}, {{1, 1}, {3, 1}, {3, 3}, 0}, {{1, 1}, {3, 2}, {2, 3}, 1}, {{1, 
+        1}, {3, 1}, {2, 3}, 1}, {{1, 2}, {3, 1}, {2, 3}, 0}, {{1, 1}, {3, 
+        2}, {2, 1}, 0}, {{1, 1}, {3, 3}, {2, 1}, 1}, {{1, 2}, {3, 2}, {2, 1}, 
+        0}, {{1, 1}, {3, 2}, {3, 1}, 0}, {{1, 1}, {3, 2}, {2, 2}, 0}, {{1, 
+        1}, {3, 2}, {2, 3}, 0}, {{1, 1}, {3, 1}, {-1, -1}, 1}, {{1, 1}, {3, 
+        2}, {1, 2}, 0}, {{1, 1}, {3, 3}, {1, 2}, 1}, {{1, 1}, {3, 3}, {2, 2}, 
+        1}, {{1, 1}, {3, 2}, {1, 3}, 0}, {{1, 2}, {3, 2}, {1, 3}, 0}, {{1, 
+        1}, {3, 2}, {3, 3}, 0}, {{1, 2}, {3, 2}, {2, 3}, 0}, {{1, 1}, {3, 
+        3}, {-1, -1}, 1}, {{1, 1}, {3, 3}, {1, 2}, 0}, {{1, 1}, {3, 3}, {2, 
+        2}, 0}, {{1, 1}, {3, 3}, {3, 2}, 0}, {{1, 1}, {3, 3}, {1, 3}, 0}, {{1,
+         1}, {3, 3}, {2, 1}, 0}, {{1, 1}, {3, 3}, {3, 1}, 0}, {{1, 1}, {3, 
+        3}, {2, 3}, 0}, {{1, 2}, {3, 1}, {1, 1}, 0}, {{1, 2}, {3, 2}, {1, 1}, 
+        1}, {{1, 2}, {3, 2}, {1, 3}, 1}, {{1, 2}, {3, 1}, {1, 3}, 1}, {{1, 
+        2}, {3, 1}, {3, 3}, 0}, {{1, 2}, {3, 1}, {2, 1}, 0}, {{1, 2}, {3, 
+        2}, {2, 1}, 1}, {{1, 2}, {3, 1}, {2, 2}, 1}, {{1, 2}, {3, 1}, {3, 2}, 
+        0}, {{1, 2}, {3, 2}, {2, 3}, 1}, {{1, 2}, {3, 1}, {2, 3}, 1}, {{1, 
+        2}, {3, 2}, {-1, -1}, 1}, {{1, 2}, {3, 2}, {1, 1}, 0}, {{1, 2}, {3, 
+        2}, {3, 1}, 0}, {{1, 2}, {3, 2}, {3, 3}, 0}, {{1, 2}, {3, 2}, {2, 2}, 
+        0}, {{1, 2}, {3, 1}, {-1, -1}, 1}, {{1, 1}, {3, 1}, {-1, -1}, 0}, {{1,
+         2}, {3, 1}, {-1, -1}, 0}, {{1, 1}, {3, 2}, {-1, -1}, 0}, {{1, 2}, {3,
+         2}, {-1, -1}, 0}, {{1, 1}, {3, 3}, {-1, -1}, 0}}, {{{1, 2}, {3, 4}, {
+       3, 5}, {3, 6}, {7, 8}, {7, 9}, {7, 5}, {7, 1}, {7, 10}, {5, 11}, {6, 
+       12}, {13, 14}, {13, 10}, {13, 15}, {13, 9}, {10, 16}, {17, 18}, {17, 
+       6}, {17, 15}, {17, 1}, {17, 4}, {19, 20}, {2, 21}, {2, 22}, {2, 23}, {
+       2, 24}, {22, 12}, {22, 25}, {26, 2}, {26, 3}, {26, 27}, {23, 7}, {23, 
+       28}, {29, 13}, {12, 30}, {12, 24}, {12, 31}, {12, 26}, {24, 11}, {24, 
+       17}, {16, 32}, {16, 29}, {16, 31}, {16, 19}, {16, 23}, {31, 33}, {34, 
+       2}, {27, 18}, {27, 35}, {27, 36}, {27, 37}, {37, 12}, {38, 2}, {20, 
+       18}, {20, 39}, {20, 35}, {20, 40}, {28, 8}, {28, 34}, {28, 36}, {28, 
+       38}, {28, 40}, {40, 11}, {40, 16}, {39, 12}, {36, 16}, {36, 11}, {41, 
+       42}, {14, 43}, {44, 6}, {44, 14}, {44, 18}, {44, 45}, {46, 47}, {48, 
+       4}, {48, 35}, {48, 8}, {48, 49}, {48, 46}, {48, 18}, {18, 50}, {51, 
+       10}, {51, 38}, {51, 14}, {51, 45}, {51, 46}, {51, 8}, {49, 52}, {53, 
+       44}, {42, 29}, {42, 21}, {42, 54}, {30, 44}, {43, 29}, {43, 32}, {43, 
+       55}, {21, 51}, {47, 19}, {47, 24}, {47, 53}, {47, 54}, {47, 56}, {47, 
+       32}, {56, 48}, {32, 51}, {50, 24}, {50, 19}, {50, 30}, {50, 55}, {50, 
+       21}, {50, 56}, {54, 57}, {55, 57}, {58, 11}, {25, 59}, {60, 11}, {60, 
+       25}, {60, 33}, {11, 61}, {62, 11}, {33, 59}, {59, 52}, {57, 58}, {57, 
+       62}, {57, 59}, {61, 57}, {52, 60}}, Null}, {
+      VertexLabels -> {{{1, 1}, {3, 1}, {1, 2}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 1}], 
+           Tooltip], {{1, 2}, {3, 2}, {2, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 1}], 
+           Tooltip], {{1, 1}, {3, 3}, {3, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 1}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {2, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 1}], 
+           Tooltip], {{1, 2}, {3, 2}, {2, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 2}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {-1, -1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {3, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 2}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {1, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 1}, {3, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {-1, -1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 1}], 
+           Tooltip], {{1, 2}, {3, 1}, {2, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {2, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {-1, -1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 0}], 
+           Tooltip], {{1, 1}, {3, 1}, {2, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {3, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {2, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 1}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {2, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {1, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 2}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {-1, -1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {-1, -1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 1}], 
+           Tooltip], {{1, 1}, {3, 3}, {1, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 0}], 
+           Tooltip], {{1, 1}, {3, 1}, {2, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {1, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {2, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}], 
+           Tooltip], {{1, 2}, {3, 2}, {1, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 1}], 
+           Tooltip], {{1, 2}, {3, 2}, {3, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 1}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {1, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 1}], 
+           Tooltip], {{1, 1}, {3, 2}, {1, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {2, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {2, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {2, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {2, 1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 1}], 
+           Tooltip], {{1, 2}, {3, 1}, {-1, -1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {-1, -1}, 0}], 
+           Tooltip], {{1, 1}, {3, 1}, {2, 2}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 1}], 
+           Tooltip], {{1, 1}, {3, 3}, {1, 2}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 1}], 
+           Tooltip], {{1, 1}, {3, 1}, {1, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {2, 1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}], 
+           Tooltip], {{1, 2}, {3, 2}, {1, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {3, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}], 
+           Tooltip], {{1, 1}, {3, 3}, {2, 1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 1}], 
+           Tooltip], {{1, 1}, {3, 1}, {3, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 2}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {2, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {3, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 3}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {2, 2}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 1}], 
+           Tooltip], {{1, 1}, {3, 3}, {2, 2}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 1}], 
+           Tooltip], {{1, 2}, {3, 1}, {1, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 1}], 
+           Tooltip], {{1, 1}, {3, 1}, {-1, -1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 1}], 
+           Tooltip], {{1, 2}, {3, 2}, {1, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 1}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {2, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {3, 3}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 3}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {-1, -1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {-1, -1}, 1}], 
+           Tooltip], {{1, 2}, {3, 1}, {1, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 1}, 0}], 
+           Tooltip], {{1, 1}, {3, 1}, {1, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 1}], 
+           Tooltip], {{1, 1}, {3, 2}, {-1, -1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}], 
+           Tooltip], {{1, 1}, {3, 1}, {1, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 0}], 
+           Tooltip], {{1, 1}, {3, 1}, {2, 3}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 1}], 
+           Tooltip], {{1, 1}, {3, 1}, {2, 1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 1}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {3, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 2}, 0}], 
+           Tooltip], {{1, 1}, {3, 2}, {2, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}], 
+           Tooltip], {{1, 2}, {3, 2}, {1, 1}, 1} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 1}, 1}], 
+           Tooltip], {{1, 1}, {3, 1}, {-1, -1}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 0}], 
+           Tooltip], {{1, 2}, {3, 1}, {2, 2}, 0} -> Placed[
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 0}], Tooltip]},
+        VertexSize -> {{{1, 2}, {3, 1}, {2, 2}, 0} -> 
+         Rational[199, 200], {{1, 2}, {3, 1}, {-1, -1}, 1} -> 
+         Rational[1613, 1000], {{1, 2}, {3, 2}, {-1, -1}, 1} -> 
+         Rational[189, 500], {{1, 2}, {3, 1}, {3, 3}, 0} -> 
+         Rational[913, 1000], {{1, 1}, {3, 3}, {-1, -1}, 1} -> 
+         Rational[1291, 1000], {{1, 1}, {3, 2}, {-1, -1}, 1} -> 
+         Rational[1037, 500], {{1, 1}, {3, 1}, {2, 2}, 0} -> 
+         Rational[547, 1000], {{1, 1}, {3, 1}, {-1, -1}, 1} -> 
+         Rational[81, 200], {{1, 1}, {3, 1}, {3, 3}, 0} -> 
+         Rational[77, 125], {{1, 1}, {3, 1}, {1, 2}, 0} -> 
+         Rational[113, 200], {{1, 1}, {3, 3}, {2, 2}, 0} -> 
+         Rational[603, 1000]}, 
+       VertexStyle -> {{{1, 2}, {3, 2}, {2, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 2}, {3, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {3, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {3, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 2}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 1}, {1, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {3, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {2, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {1, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 2}, {3, 2}, {1, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {2, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {1, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 1}, {3, 3}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {2, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 2}, {2, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {2, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 2}, {3, 2}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {3, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {3, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 2}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 2}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 2}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {2, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 2}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 2}, {2, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 2}, {3, 1}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 2}, {3, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {1, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {3, 3}, 0} -> 
+         RGBColor[1, 0, 0], {{1, 1}, {3, 3}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 3}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {1, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 3}, {1, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 1}, {2, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 1}, {2, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {3, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {1, 2}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {2, 2}, 0} -> 
+         RGBColor[1, 1, 0], {{1, 2}, {3, 2}, {1, 1}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {2, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 3}, {-1, -1}, 1} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 2}, {1, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 2}, {2, 1}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {1, 3}, 0} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {3, 2}, 0} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {-1, -1}, 0} -> 
+         RGBColor[0, 0, 1], {{1, 1}, {3, 2}, {1, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 1}, {1, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 2}, {3, 2}, {2, 3}, 1} -> 
+         GrayLevel[0.5], {{1, 1}, {3, 2}, {2, 3}, 1} -> GrayLevel[0.5]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.021505072630250976`], 
+        ArrowBox[CompressedData["
+1:eJyFl1tQU1cUhk9ukCAJCakTtTLFsQXxAqhFpF72BuugUnBgKIggCIpUBByp
+WB0VSL0gLQWtDiBapnKzisUCRVutyCVFAUUoBHCqiEANNQoiiEC4lAf78u8H
+MnMe1nz7nH32v9b618mckN1eoQKO4+ImL/67y9Q/zKpSM0iqfe2ezzpqQnf6
+7M3zWymgv23Z0807LGLiHel581fEDJKC+Pz+yL85hod7HdisWSOj/Rr3M1/s
+FzPcfJr2qYvPONlQcEftmc3eH5TIH92qFtKS9IwOZZ+E5pTeLfb/VUgPjF1N
+aP1eQUVi/RUryqPhN1RVafVKhmuHnTJGFCJan7s1LHu6mOFqUa5vjjNHf3K2
+5bWmmDPrUx11NYvTTak+Ndg4uYxj1icoTkR0mkpoVuH82C65nM4uen6oznaA
+iHc89t7rJKKoJ3LcD3n6hdrwk0Gj5PSMmyXNpRKGc+9+Wbrd1y+P8hie1Fx9
+7Uj/M/Li33mhUoWQiQMqXJbde5+jhU4zO66eEjDnPXhOrcrRSmmpxcJWl6s9
+BM+L+UHe8MnNgLn+xnR6i9Mb3gIZw69pnGXKlxNk5cknb8SX5AwfNwzNLTk4
+jX6173b5q0wjyk2MfRmbfYRYB2/xermcPT9yPC/yrifH6nzlWtIZHLHKbUzM
+8PiKY/pYfg3ZpkiMPqyRMuur3LKKVeU6sjSyV7fTgWP0XGNvGfZxGp8KTe6K
+JAMShmP9Iz/TelbppNOR46tvBenHDQQ56oN8SVhto1n1KxL1UGOcN8KndYZ2
+i8ryITI6tD2h9LycqU/k2F/IsR+Qo37Ib1zI9R6cwae2PJ/29iA2Nk9YWmTf
+OEGCR4pHNqWIGT1VcTadK0ok9JfjHfutNsuYGJ+HXP646YeVh01oj6zDaPef
+5gx3HN+1wNvLjNod7D8df0fB8KAoUf1aKqbLXi8KESYJGT8sSmxL3Vj7gvg6
+/+79+DMx44dY78hnubq65oYqabXFX5fy5EKmXrDfkX9T6RJ12k1AC9LOWiTl
+85l+xX5HjvnC9zlf66EfcTenqxtastKSxwj2O/o5cvRj5LHOaw2JISa06udA
+feJ9ORNjfpFjfpFbl11RR6nF1G1el2iD0JjhM62z9KMiGX27Z9iG+07J6In+
+jLwwUe5BA0X0XllAb+w5A0GO+yMPfL3wkYNyhGT0xixpjxSw+YT6Q79AP0O/
+dT+bV2CX2keWr5EOxVWyfhsSel1b3Kmgpn1LN6mS+YyfYH3jeqwP1APrA/XA
++kSOfof5wv5CPXF/7Hdm3oHeTP8Ax/fz9uTuuEc8JP/PrbL1iwW3onvJ1/9s
+VDZqewjG6CfIMd/IH6gz7VSBE+SFd/y3ny8aJDiv8H7kmG/kf3yg/THAkqPb
+HfIPXaw3EKwnnA/IcZ4ix/5GPtQSp2mb2UDqPbLEZN3kPNvlyH875y151Hho
++7xxKQ2PyZsee36YbOlp9soMMGZinCfI0Q+Roz7IL9fcvR/c/oyUJ9lMlH8o
+YzjmB7lAX9Gmih4nGYuIRNcmpfbNjfG2OiGtqN+mfRrBzmfk6E/IUV/k6J/I
+UW/kNRetPGbfltOOsVNk3UMpE38abXA9IH2P5lg6hdZGGE0575FjfyDH/CFH
+P0SO9Y0c84N+iPojx+9T5NgfyNHPkGN/IMf8YT7u+dmvmuWppIPpvIyUj3hM
+PWM/Yj13F0ncAyfn6ZGUKkNh0ABBPZFPVe+4/mjuDM0DTzkN626qk/oNMM/D
++YO8aZO9h+OgGTW7IJas3/eKeR76Oz5vKr3wfuT4PYUc5yn+H5vqPLj/f1dl
+F0Q=
+         "], 0.04312333044468954]}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.4230376720567532, 3.314504460878173}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.4044678692105674, 2.6860387954327187}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.588065533221952, 4.39340412151011}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[1, 1, 0], 
+           DiskBox[{2.1563237675882214, 4.953703971098188}, 
+            0.0648681059010926]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.633778767484936, 3.0105655742997683}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\[WhiteRook]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.032051739429051, 4.640472429703017}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.2614273910104492, 2.6530539159837225}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 2}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[1, 1, 0], 
+           DiskBox[{1.7733310863205585, 3.21818296410772}, 
+            0.11799591475610079]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[1, 1, 0], 
+           DiskBox[{0., 2.248372490980686}, 0.06700270536401702]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.717225892075207, 2.508326330481614}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{3.5743137218295926, 2.0940208985001525}, 
+            0.2459532936725156]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.1312931517624665, 4.016496631007984}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.009589183726120165, 2.6527964052912867}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {1, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.32912249725586507, 3.1236786650372195}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[1, 0, 0], 
+           DiskBox[{0.2032011652004435, 3.720942396934491}, 
+            0.07305073717563626]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\[WhiteRook]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {3, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.013573097145395, 2.4461362518261116}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.5473052184240603, 4.1530705600146085}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {2, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.2621885884329602, 4.0936312725537345}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.323830419225517, 3.244157834212503}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.213493132308837, 3.7940186924104964}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.4036208787961413, 2.107143310233446}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.783089358165218, 3.0587932192071263}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[WhiteRook]", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.8960598775453872, 2.0797453059256314}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.5631732643388854, 3.242713709204589}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{4.849263299680183, 2.5081303851363583}, 
+            0.04802848791579982]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.9195010418546663, 3.7709998281742494}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.298114741374035, 4.200721433309303}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.411902295505972, 2.333763343095561}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.7469754584151524, 1.7497361888707998}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.995379501048132, 4.165073243875721}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.435404091869258, 2.8276076447062297}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\[WhiteRook]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.0490873597359038, 2.3723869902561807}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{4.472365702932935, 2.3193804636813464}, 
+            0.15309821703530263]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.6710210894391015, 1.725462851532984}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\[WhiteRook]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[1, 1, 0], 
+           DiskBox[{3.3111507731042664, 4.6928063464617775}, 
+            0.07150908200796861]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.0631990557522104, 2.8770943126919852}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[WhiteRook]", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.7529238137111744, 4.887695937967229}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.6296900368316964, 2.4286502783051676}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.9151996033031327, 4.444826423393166}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[WhiteRook]", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{3.031383156934495, 2.5683677358886383}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\[WhiteKing]", "\" \"", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.3972353404399389, 0.}, 0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteRook]", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.9827561437944539, 0.9636016251744624}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteRook]", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.7423208721614791, 2.026080905908793}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.099166567067715, 4.190917850312694}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\[WhiteRook]"}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {1, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[1, 0, 0], 
+           DiskBox[{0.2672039908351276, 4.070552954584585}, 
+            0.10827162831388946]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\[WhiteRook]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.4457922064381732, 3.749100480136333}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.6007061811172556, 2.920223853286912}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\[WhiteRook]", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.6128816666266843, 4.106330236642124}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{4.1866314135640526, 3.7310948339870587}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\[WhiteRook]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {3, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.9890601120936862, 3.069993933312887}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.8998182245889466, 3.0375315302882586}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\[WhiteRook]"}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 3}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{5.013157963487689, 2.8031223209437304}, 
+            0.044826588721413166]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{0.7148903865075529, 3.767948144393444}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {
+              "\[WhiteRook]", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {1, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.9604713306545027, 1.3860679101247184}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[WhiteRook]", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{2.015801674369838, 1.7384409780382493}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\[WhiteRook]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 3}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {3, 3}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {GrayLevel[0.5], 
+           DiskBox[{1.902854795610154, 3.7338391039281307}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\[WhiteRook]", "\" \""}, {
+              "\" \"", "\[WhiteKing]", "\" \""}}, AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 2}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 2}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{3.298031427248464, 1.2733630976663057}, 
+            0.19128382964983978]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {-1, -1}, 1}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {-1, -1}, 1}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{4.079894126896196, 1.2717416838991313}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 1}, {-1, -1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{4.57615249317578, 1.8473125802093615}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\[BlackKing]", "\" \"", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 1}, {-1, -1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 1}, {-1, -1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{4.829201656414124, 2.1433403045403976}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{3.729316886561205, 0.9588941785922811}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\[BlackKing]", "\" \""}, {
+              "\" \"", "\" \"", "\" \""}, {"\" \"", "\[WhiteKing]", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 0}], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[
+          {RGBColor[0, 0, 1], 
+           DiskBox[{3.9952226742271737, 1.0288782456282808}, 
+            0.04312333044468954]},
+          InterpretationBox[
+           TagBox[
+            
+            GridBox[{{"\" \"", "\" \"", "\[BlackKing]"}, {
+              "\" \"", "\" \"", "\" \""}, {"\[WhiteKing]", "\" \"", "\" \""}},
+              AutoDelete -> False, 
+             GridBoxBackground -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+               "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                 GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                 GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                 GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                 GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}, 
+             GridBoxDividers -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+             GridBoxItemSize -> {"Columns" -> {{1.}}, "Rows" -> {{1.}}}], 
+            "Grid"], 
+           $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 0}]]],
+         Annotation[#, 
+          $CellContext`ChessPosition[{{1, 1}, {3, 3}, {-1, -1}, 0}], 
+          "Tooltip"]& ]}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  ImageSize->{466.5, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.8663589483706017`*^9, 3.866359028152718*^9, 3.866359104540559*^9, {
+   3.866359146543621*^9, 3.8663591505654*^9}, 3.866359208549711*^9},
  CellLabel->
-  "Out[734]=",ExpressionUUID->"d66c1e2c-0f3a-46af-a4ed-3a46699dabd1"]
+  "Out[800]=",ExpressionUUID->"1cb85db0-4f56-4069-9990-fbccb260017c"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{693, 762},
-WindowMargins->{{0, Automatic}, {0, Automatic}},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
 FrontEndVersion->"13.0 for Linux x86 (64-bit) (December 2, 2021)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f00f1f4d-405b-4c51-9848-986aa0a28d77"
@@ -5312,15 +7111,13 @@ Cell[44009, 1179, 93773, 1843, 567, "Output",ExpressionUUID->"bab0e66d-9016-4ba5
 Cell[137797, 3025, 1896, 41, 113, "Input",ExpressionUUID->"2684d4f2-4068-4f10-b4b5-117c8e3d864d"],
 Cell[CellGroupData[{
 Cell[139718, 3070, 250, 5, 29, "Input",ExpressionUUID->"0a700098-6359-40af-85e8-25f2dd7bf390"],
-Cell[139971, 3077, 110830, 2101, 583, "Output",ExpressionUUID->"bcf944db-c296-46bd-ba04-42af6b936a35"]
+Cell[139971, 3077, 110830, 2101, 560, "Output",ExpressionUUID->"bcf944db-c296-46bd-ba04-42af6b936a35"]
 }, Open  ]],
+Cell[250816, 5181, 431, 11, 29, "Input",ExpressionUUID->"97fd2ed6-e477-4b2f-a53a-ea35598a1aa0"],
+Cell[251250, 5194, 298, 7, 29, "Input",ExpressionUUID->"b0a5c896-a001-4715-8108-44d48d9a1cee"],
 Cell[CellGroupData[{
-Cell[250838, 5183, 611, 17, 51, "Input",ExpressionUUID->"74c637c7-5481-4738-9262-b5d2512f3e56"],
-Cell[251452, 5202, 812, 27, 72, "Output",ExpressionUUID->"def4ea8a-344a-411c-9dfd-589483ed3554"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[252301, 5234, 287, 6, 29, "Input",ExpressionUUID->"1d33ec26-a82a-436b-9f74-e64bcc47eaf6"],
-Cell[252591, 5242, 997, 22, 81, "Output",ExpressionUUID->"d66c1e2c-0f3a-46af-a4ed-3a46699dabd1"]
+Cell[251573, 5205, 625, 14, 51, "Input",ExpressionUUID->"b4acab3d-916c-4772-aea4-a77131b32adf"],
+Cell[252201, 5221, 93593, 1842, 500, "Output",ExpressionUUID->"1cb85db0-4f56-4069-9990-fbccb260017c"]
 }, Open  ]]
 }, Open  ]]
 }
