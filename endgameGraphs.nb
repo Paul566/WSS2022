@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    972452,      20858]
-NotebookOptionsPosition[    967031,      20777]
-NotebookOutlinePosition[    967423,      20793]
-CellTagsIndexPosition[    967380,      20790]
+NotebookDataLength[    962880,      20301]
+NotebookOptionsPosition[    957593,      20223]
+NotebookOutlinePosition[    957985,      20239]
+CellTagsIndexPosition[    957942,      20236]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1226,6 +1226,89 @@ b2c21cfdab46"],
 Cell[BoxData[
  RowBox[{
   RowBox[{
+   RowBox[{"positionToGrid", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"w1_", ",", "w2_"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"b1_", ",", "b2_"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1_", ",", "r2_"}], "}"}], ",", "m_"}], "}"}], ",", "n_"}], 
+    "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"table", "=", 
+        RowBox[{"Table", "[", 
+         RowBox[{"\"\< \>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "n"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"j", ",", "n"}], "}"}]}], "]"}]}], ",", "grid"}], "}"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"table", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"n", "-", "w1", "+", "1"}], ",", "w2"}], "]"}], "]"}], "=", 
+       "\[WhiteKing]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"table", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"n", "-", "b1", "+", "1"}], ",", "b2"}], "]"}], "]"}], "=", 
+       "\[BlackKing]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"r1", "!=", 
+         RowBox[{"-", "1"}]}], ",", 
+        RowBox[{
+         RowBox[{"table", "[", 
+          RowBox[{"[", 
+           RowBox[{
+            RowBox[{"n", "-", "r1", "+", "1"}], ",", "r2"}], "]"}], "]"}], 
+         "=", "\[WhiteRook]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"grid", "=", 
+       RowBox[{"Grid", "[", 
+        RowBox[{"table", ",", 
+         RowBox[{"Dividers", "->", "All"}], ",", 
+         RowBox[{"ItemSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"1.", ",", "1."}], "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Background", "->", 
+          RowBox[{"{", 
+           RowBox[{"Automatic", ",", "Automatic", ",", 
+            RowBox[{"Flatten", "[", 
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "j"}], "}"}], "->", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"EvenQ", "[", 
+                   RowBox[{"i", "+", "j"}], "]"}], ",", "LightGray", ",", 
+                  "White"}], "]"}]}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "n"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"j", ",", "n"}], "}"}]}], "]"}], "]"}]}], "}"}]}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", "grid"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.866522777357479*^9, 3.866522793542347*^9}, {
+   3.866522824626108*^9, 3.866522876069467*^9}, {3.866522911803117*^9, 
+   3.866522917986865*^9}, {3.866523010324151*^9, 3.8665230408446217`*^9}, 
+   3.866523081114799*^9},
+ CellLabel->
+  "In[230]:=",ExpressionUUID->"6a22fdbd-4301-4ce8-810a-3bd02d887392"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
    RowBox[{"ChessPositionData", "[", 
     RowBox[{"ChessPosition", "[", 
      RowBox[{"data_", ",", "n_"}], "]"}], "]"}], ":=", "data"}], 
@@ -1607,15 +1690,15 @@ Cell[BoxData[
          "}"}]}], ",", 
        RowBox[{"edges", "=", 
         RowBox[{"{", "}"}]}], ",", "vertexStyle", ",", "curLayer", ",", 
-       "nextLayer", ",", "genEdgesForThisVertex", ",", "labels", ",", "g"}], 
-      "}"}], ",", "\[IndentingNewLine]", 
+       "nextLayer", ",", "genEdgesForThisVertex", ",", "labels"}], "}"}], ",",
+      "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"curLayer", "=", 
        RowBox[{"{", "root", "}"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"labels", "=", 
        RowBox[{"{", 
         RowBox[{"root", "->", 
-         RowBox[{"ChessPosition", "[", 
+         RowBox[{"positionToGrid", "[", 
           RowBox[{
            RowBox[{"root", "[", 
             RowBox[{"[", "1", "]"}], "]"}], ",", "n"}], "]"}]}], "}"}]}], ";",
@@ -1675,7 +1758,7 @@ Cell[BoxData[
             RowBox[{
              RowBox[{
               RowBox[{"#", "->", 
-               RowBox[{"ChessPosition", "[", 
+               RowBox[{"positionToGrid", "[", 
                 RowBox[{
                  RowBox[{"#", "[", 
                   RowBox[{"[", "1", "]"}], "]"}], ",", "n"}], "]"}]}], "&"}], 
@@ -1684,19 +1767,18 @@ Cell[BoxData[
       RowBox[{"edges", "=", 
        RowBox[{"DeleteDuplicates", "[", "edges", "]"}]}], ";", 
       "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", "labels", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"g", "=", 
-       RowBox[{"Graph", "[", 
-        RowBox[{"edges", ",", 
-         RowBox[{"GraphLayout", "\[Rule]", "\"\<LayeredEmbedding\>\""}], ",", 
-         
-         RowBox[{"(*", 
-          RowBox[{"VertexShape", "\[Rule]"}], "*)"}], 
-         RowBox[{"VertexLabels", "\[Rule]", "labels"}]}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", 
-       RowBox[{"VertexList", "[", "g", "]"}], "]"}], ";", 
-      "\[IndentingNewLine]", "g"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+      RowBox[{"Graph", "[", 
+       RowBox[{"edges", ",", 
+        RowBox[{"GraphLayout", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<LayeredEmbedding\>\"", ",", 
+           RowBox[{"\"\<RootVertex\>\"", "->", "root"}], ",", 
+           RowBox[{"\"\<LeafDistance\>\"", "->", "1"}]}], "}"}]}], ",", 
+        RowBox[{"VertexShape", "\[Rule]", "labels"}], ",", 
+        RowBox[{"VertexSize", "\[Rule]", "0.6"}], ",", 
+        RowBox[{"EdgeStyle", "->", 
+         RowBox[{"Arrowheads", "[", "Small", "]"}]}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{
@@ -1707,1228 +1789,39 @@ Cell[BoxData[
       RowBox[{"position", ",", " ", 
        RowBox[{"move", " ", "number"}]}], "}"}]}]}], "*)"}]}]], "Input",
  CellChangeTimes->CompressedData["
-1:eJwdzmkow3EcBvCZ5MyLeeGN5hiNMmNylWNq5CgvNJphL+askTHlSNpcLySU
-JonSEktjmprMSpqGqeFvNFHkaO4X3rCJ7Pm9+Pbpqeepb7S0rbyBTqPR4rwH
-69X93C37W75gJiUZVqTaZ2GoiCKOXMRSUO5iE6nEwntoay0iSn0mfmHU+esf
-5NmMIpPXIP5lPdRsuGRQq/Dvgi0zrCGYm1O7DIWujFWYxAkxQ0p3ZYHJJqEN
-ptPddtJz/hJpN9cOKL/lvEAGN+sTfhuURG0m9wcW62VEh0dD3/Y6qQ7zg34f
-QUwoYKXHwO8tcwJUsqVpMFZykA3d0fP5MNP3pRSKq+8k0Fpw2wRDwwQq+LNu
-GYa87KoRqJvyjMPmI/kiZOvbtdDZ10M06QbX4LPcQ7wOvt+GBnXiPtzcez+G
-05FjZ3BlbvcBLlT0PkKmZekVlny5P8j/J3V1Zq+Rq4xG2H3SpoARcYGdsEjM
-7CHZweiFbzVuJax08FRQ+BgwDKvD9URjmcYAO94HNuHnkGIHDhhHiXyOygrp
-K+JDsg+PP4WCvCcK/gPeF2Of
+1:eJwd0W1MEmAQB3Ciucqac7DlhxhGUtSGaTB82ax0UbOsVg2aoVmilcuaqG2l
+swYE9P6ykmItW6My5lALNxyKc06jQgVELFRKl6Al6gdbKTJb/J8Pt9/udrfd
+7VjSsmNnqBQKhR8JWKy9lmRxzGQJdTuSoZjveAZjct1EzRe2G8qmOEQ3d98E
+tF/MJkpXPFiGG4eC/yDPbs5tixidOVwM9S1TpdBQueoyvKBLUMFdO0++haKp
+1Ea4PXGdFbqNo90wuU1khynUkIP0eZeJlDGfB8rGE6chLSl9Hi6a5ERDWlIY
+7m8uJXqW9NT2iA+19CgYNRfNhMKElE1w0WLdBuUcqQCyCz5lwBCrLgumrZzO
+gZK8HwXQtnf8HIyhCxUw/K5bDXkZJzTQ+HjpPizplb2GnOZyA/TWVBHbjNeb
+4C/ZEtG3dqIdmrTcj7C1Z9YJn8TfHYQNz7v88KW4OgCZ3fVBeGAhNEf2dxUV
+WSPGN9LOwiuuskrI2LzmEsyWMKtI7qFVw5n8kBwe9/AUUBRYrYZ5cc1E82G9
+CVbMKlvhvKqyEyrNt4mZiQobpDZIPpP5uK0DULj7pxueeqN574iYXlhPvCeI
+feWMeJDbZIKqq38ssKaF3wF13yxdTnKPug8+UhQOwsn83iF4JP7DMHxaLhyB
+I7V7xmBOVMUkVAoG/sKj/T1h2HHnd6wLf1mg0+BNf2ADXN+5yIBNL9gsUq9T
+bYHmG94+qBGn9sPvo6Kv0Mc45IUlt077oe18bRD+Bx6S8UI=
   "],
  CellLabel->
-  "In[220]:=",ExpressionUUID->"a5eece2a-4d82-4531-835a-e0264ebbe3fd"],
+  "In[311]:=",ExpressionUUID->"a5eece2a-4d82-4531-835a-e0264ebbe3fd"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"multiwayGraph", "[", 
-  RowBox[{"3", ",", "3"}], "]"}]], "Input",
- CellChangeTimes->{{3.866482517093729*^9, 3.866482521444604*^9}},
+  RowBox[{"3", ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.866482517093729*^9, 3.866482521444604*^9}, {
+  3.8665251797869997`*^9, 3.8665252162870417`*^9}, {3.866525684132012*^9, 
+  3.866525684415558*^9}, {3.8665257501000843`*^9, 3.866525770444624*^9}, {
+  3.8665259359097157`*^9, 3.866525940534635*^9}, {3.866527376676362*^9, 
+  3.866527376978629*^9}, {3.86652740810653*^9, 3.866527408331729*^9}, {
+  3.8665274937495403`*^9, 3.866527493840844*^9}, {3.8665275656369658`*^9, 
+  3.8665275725867863`*^9}, {3.866527633483036*^9, 3.8665276335382032`*^9}, {
+  3.8665276747079687`*^9, 3.866527674777954*^9}, {3.866527752607196*^9, 
+  3.866527752957806*^9}, {3.866527846601388*^9, 3.866527866344346*^9}},
  CellLabel->
-  "In[221]:=",ExpressionUUID->"31fc41b6-b396-4f63-8280-66e06ac4a9f0"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "3"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "2"}], "}"}], ",", "1"}], "}"}], ",", "1"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
-        {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 1}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "3"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\[WhiteRook]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "3"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[WhiteRook]", "\[BlackKing]"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 2}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "3"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
-        {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "3"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
-        {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "1"}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "3"}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"-", "1"}], ",", 
-          RowBox[{"-", "1"}]}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}], 
-    "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "1"}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"-", "1"}], ",", 
-          RowBox[{"-", "1"}]}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}], 
-    "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "3"}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\[WhiteRook]", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-        {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"1", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\[WhiteRook]"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\[WhiteRook]"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"-", "1"}], ",", 
-          RowBox[{"-", "1"}]}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-    "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\[WhiteRook]", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"-", "1"}], ",", 
-          RowBox[{"-", "1"}]}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-    "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
-        {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"1", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\[WhiteRook]"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\[WhiteRook]"},
-        {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}, 3]]}], ",", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "1"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"3", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}],
-     "\[Rule]", 
-    InterpretationBox[
-     TagBox[GridBox[{
-        {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
-        {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
-        {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
-       },
-       AutoDelete->False,
-       GridBoxBackground->{
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
-         "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
-           GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
-           GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
-           GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
-           GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
-       GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-       GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
-      "Grid"],
-     $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}, 3]]}]}], 
-  "}"}]], "Print",
- CellChangeTimes->{{3.8664842350759363`*^9, 3.866484284035409*^9}, 
-   3.866484383806213*^9, 3.8664845270087547`*^9, {3.866484587929813*^9, 
-   3.866484603617257*^9}, 3.866485564922155*^9, 3.8664856674887037`*^9, 
-   3.866485715716579*^9, 3.866485773166457*^9, 3.8664858153032017`*^9, 
-   3.866486207377429*^9, 3.866486271293803*^9, 3.866486356806694*^9, 
-   3.8664864263022346`*^9},
- CellLabel->
-  "During evaluation of \
-In[221]:=",ExpressionUUID->"420ccc19-b1c1-4ffb-8741-2474648146f0"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "3"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "2"}], "}"}], ",", "1"}], "}"}], ",", "1"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "3"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "3"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "3"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "3"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "2"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "1"}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "3"}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"-", "1"}], ",", 
-         RowBox[{"-", "1"}]}], "}"}], ",", "1"}], "}"}], ",", "3"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}], 
-   ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"3", ",", "2"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"-", "1"}], ",", 
-         RowBox[{"-", "1"}]}], "}"}], ",", "0"}], "}"}], ",", "4"}], "}"}]}], 
-  "}"}]], "Print",
- CellChangeTimes->{{3.8664842350759363`*^9, 3.866484284035409*^9}, 
-   3.866484383806213*^9, 3.8664845270087547`*^9, {3.866484587929813*^9, 
-   3.866484603617257*^9}, 3.866485564922155*^9, 3.8664856674887037`*^9, 
-   3.866485715716579*^9, 3.866485773166457*^9, 3.8664858153032017`*^9, 
-   3.866486207377429*^9, 3.866486271293803*^9, 3.866486356806694*^9, 
-   3.8664864263178167`*^9},
- CellLabel->
-  "During evaluation of \
-In[221]:=",ExpressionUUID->"92491cdc-5e1a-4717-85de-9d054b9dad72"]
-}, Open  ]],
+  "In[322]:=",ExpressionUUID->"31fc41b6-b396-4f63-8280-66e06ac4a9f0"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -2943,345 +1836,898 @@ Cell[BoxData[
         4}, {{{1, 1}, {3, 2}, {2, 3}, 0}, 4}, {{{1, 2}, {3, 2}, {2, 3}, 0}, 
         4}, {{{1, 1}, {3, 2}, {1, 3}, 0}, 4}, {{{1, 1}, {3, 2}, {3, 3}, 0}, 
         4}, {{{1, 1}, {3, 2}, {2, 1}, 0}, 4}, {{{1, 2}, {3, 2}, {-1, -1}, 0}, 
-        4}}, {{{1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {3, 7}, {4, 8}, {4, 
-       9}, {5, 7}, {6, 9}, {6, 8}, {7, 10}, {7, 11}, {7, 12}, {7, 13}, {8, 
-       14}, {8, 15}, {8, 16}, {8, 17}, {8, 12}, {9, 18}}, Null}, {
-      GraphLayout -> "LayeredEmbedding", 
-       VertexLabels -> {{{{1, 2}, {3, 2}, {-1, -1}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 2}, {3, 2}, {-1, -1}, 0}, 
-           3], {{{1, 1}, {3, 2}, {-1, -1}, 1}, 
-           3} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {-1, -1}, 1}, 
-           3], {{{1, 1}, {3, 3}, {2, 3}, 0}, 
-           2} -> $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 3}, 0}, 
-           3], {{{1, 1}, {3, 2}, {1, 3}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {1, 3}, 0}, 
-           3], {{{1, 2}, {3, 2}, {2, 1}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 1}, 0}, 
-           3], {{{1, 1}, {3, 2}, {2, 1}, 1}, 
-           3} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 1}, 
-           3], {{{1, 2}, {3, 1}, {2, 2}, 0}, 
-           2} -> $CellContext`ChessPosition[{{1, 2}, {3, 1}, {2, 2}, 0}, 
-           3], {{{1, 1}, {3, 2}, {2, 3}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 0}, 
-           3], {{{1, 1}, {3, 2}, {3, 3}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 3}, 0}, 
-           3], {{{1, 1}, {3, 2}, {2, 2}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 2}, 0}, 
-           3], {{{1, 1}, {3, 2}, {3, 1}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {3, 1}, 0}, 
-           3], {{{1, 1}, {3, 2}, {2, 1}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 1}, 0}, 
-           3], {{{1, 1}, {3, 3}, {3, 2}, 0}, 
-           2} -> $CellContext`ChessPosition[{{1, 1}, {3, 3}, {3, 2}, 0}, 
-           3], {{{1, 2}, {3, 2}, {2, 3}, 0}, 
-           4} -> $CellContext`ChessPosition[{{1, 2}, {3, 2}, {2, 3}, 0}, 
-           3], {{{1, 1}, {3, 3}, {2, 1}, 0}, 
-           2} -> $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 1}, 0}, 
-           3], {{{1, 1}, {3, 2}, {2, 3}, 1}, 
-           3} -> $CellContext`ChessPosition[{{1, 1}, {3, 2}, {2, 3}, 1}, 
-           3], {{{1, 1}, {3, 3}, {1, 2}, 0}, 
-           2} -> $CellContext`ChessPosition[{{1, 1}, {3, 3}, {1, 2}, 0}, 
-           3], {{{1, 1}, {3, 3}, {2, 2}, 1}, 
-           1} -> $CellContext`ChessPosition[{{1, 1}, {3, 3}, {2, 2}, 1}, 
-           3]}}]]}, 
-    TagBox[GraphicsGroupBox[{
-       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
-        ArrowBox[CompressedData["
-1:eJxTTMoPSmVmYGAQBWImKM7qm3eW3fW3/YwvmzJtNny0P/3B+dHSqcftT4Hp
-5/bo8hD6IU557eCX35yfMTvgkne9aLj5xw02nPJx/lX5a09zwuXR7UPlX8ew
-r3trH/cjMwYHXPIQ/7HD5dHdg24+unvQzUeXRzcf3TwGNIAufxpNHXb55zjl
-YeEIk0d3L7p+dHkI/R2n/N83V6L4q//ilIfYz+iAS35T0W/Vj4tY4PLo4QXj
-w+QBxClQdw==
-         "], 0.03182778311919732]}, 
-       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
-        0.7]}], {
-         DiskBox[{1.704353144837024, 1.1055263642186102}, 
-          0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "3"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "2"}], "}"}], ",", "1"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {1.704353144837024, 1.1373541473378075}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.18425439403643504, 0.73701757614574}, 
-          0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {0.18425439403643504, 0.7051897930265427}], 
-          ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.5527631821093051, 0.73701757614574}, 0.03182778311919732],
-          InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "3"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"1", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {0.5527631821093051, 0.7688453592649374}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.487434319491873, 0.73701757614574}, 0.03182778311919732], 
+        4}, {{{1, 2}, {3, 1}, {2, 3}, 1}, 5}, {{{1, 1}, {3, 2}, {1, 3}, 1}, 
+        5}, {{{1, 1}, {3, 1}, {-1, -1}, 1}, 5}, {{{1, 1}, {3, 1}, {2, 2}, 1}, 
+        5}, {{{1, 1}, {3, 3}, {2, 2}, 1}, 5}, {{{1, 1}, {3, 2}, {-1, -1}, 1}, 
+        5}, {{{1, 1}, {3, 1}, {2, 3}, 1}, 5}, {{{1, 1}, {3, 1}, {1, 3}, 1}, 
+        5}, {{{1, 1}, {3, 3}, {-1, -1}, 1}, 5}, {{{1, 1}, {3, 3}, {2, 1}, 1}, 
+        5}, {{{1, 2}, {3, 1}, {-1, -1}, 1}, 5}}, {{{1, 2}, {1, 3}, {1, 4}, {1,
+        5}, {1, 6}, {3, 7}, {4, 8}, {4, 9}, {5, 7}, {6, 9}, {6, 8}, {7, 10}, {
+       7, 11}, {7, 12}, {7, 13}, {8, 14}, {8, 15}, {8, 16}, {8, 17}, {8, 
+       12}, {9, 18}, {10, 19}, {11, 20}, {11, 21}, {12, 22}, {12, 23}, {13, 
+       24}, {13, 25}, {14, 19}, {15, 26}, {16, 27}, {17, 28}, {18, 29}}, 
+       Null}, {EdgeStyle -> {
+         Arrowheads[Small]}, 
+       GraphLayout -> {
+        "LayeredEmbedding", "RootVertex" -> {{{1, 1}, {3, 3}, {2, 2}, 1}, 1}, 
+         "LeafDistance" -> 1}, 
+       VertexShape -> {{{{1, 1}, {3, 2}, {-1, -1}, 1}, 3} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> 
+           All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 3}, {
+            2, 3}, 0}, 2} -> 
+         Grid[{{" ", " ", $CellContext`\[BlackKing]}, {
+            " ", " ", $CellContext`\[WhiteRook]}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 1}, {
+            2, 2}, 1}, 5} -> 
+         Grid[{{$CellContext`\[BlackKing], " ", " "}, {
+            " ", $CellContext`\[WhiteRook], " "}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 3}, {
+            3, 2}, 0}, 2} -> 
+         Grid[{{" ", $CellContext`\[WhiteRook], $CellContext`\[BlackKing]}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> 
+           All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 2}, {3, 
+            2}, {-1, -1}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {" ", " ", " "}, {
+            " ", $CellContext`\[WhiteKing], " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            2, 3}, 1}, 3} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", " ", $CellContext`\[WhiteRook]}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 1}, {
+            2, 3}, 1}, 5} -> 
+         Grid[{{$CellContext`\[BlackKing], " ", " "}, {
+            " ", " ", $CellContext`\[WhiteRook]}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            3, 1}, 0}, 4} -> 
+         Grid[{{$CellContext`\[WhiteRook], $CellContext`\[BlackKing], " "}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> 
+           All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 
+            3}, {-1, -1}, 1}, 5} -> 
+         Grid[{{" ", " ", $CellContext`\[BlackKing]}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> 
+           All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 3}, {
+            1, 2}, 0}, 2} -> 
+         Grid[{{" ", " ", $CellContext`\[BlackKing]}, {
+            " ", " ", 
+             " "}, {$CellContext`\[WhiteKing], $CellContext`\[WhiteRook], 
+             " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 
+            2}, {-1, -1}, 1}, 5} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> 
+           All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            2, 2}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", $CellContext`\[WhiteRook], " "}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 3}, {
+            2, 1}, 0}, 2} -> 
+         Grid[{{" ", 
+             " ", $CellContext`\[BlackKing]}, {$CellContext`\[WhiteRook], " ",
+              " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 2}, {3, 
+            1}, {-1, -1}, 1}, 5} -> 
+         Grid[{{$CellContext`\[BlackKing], " ", " "}, {" ", " ", " "}, {
+            " ", $CellContext`\[WhiteKing], " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            2, 1}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], 
+             " "}, {$CellContext`\[WhiteRook], " ", 
+             " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 1}, {
+            1, 3}, 1}, 5} -> 
+         Grid[{{$CellContext`\[BlackKing], " ", " "}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], 
+             " ", $CellContext`\[WhiteRook]}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 3}, {
+            2, 1}, 1}, 5} -> 
+         Grid[{{" ", 
+             " ", $CellContext`\[BlackKing]}, {$CellContext`\[WhiteRook], " ",
+              " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 3}, {
+            2, 2}, 1}, 5} -> 
+         Grid[{{" ", " ", $CellContext`\[BlackKing]}, {
+            " ", $CellContext`\[WhiteRook], " "}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 
+            1}, {-1, -1}, 1}, 5} -> 
+         Grid[{{$CellContext`\[BlackKing], " ", " "}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> 
+           All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            2, 3}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", " ", $CellContext`\[WhiteRook]}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 3}, {
+            2, 2}, 1}, 1} -> 
+         Grid[{{" ", " ", $CellContext`\[BlackKing]}, {
+            " ", $CellContext`\[WhiteRook], " "}, {$CellContext`\[WhiteKing], 
+             " ", " "}}, Dividers -> All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            2, 1}, 1}, 3} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], 
+             " "}, {$CellContext`\[WhiteRook], " ", 
+             " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 2}, {3, 1}, {
+            2, 3}, 1}, 5} -> 
+         Grid[{{$CellContext`\[BlackKing], " ", " "}, {
+            " ", " ", $CellContext`\[WhiteRook]}, {
+            " ", $CellContext`\[WhiteKing], " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            1, 3}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], 
+             " ", $CellContext`\[WhiteRook]}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 2}, {3, 1}, {
+            2, 2}, 0}, 2} -> 
+         Grid[{{$CellContext`\[BlackKing], " ", " "}, {
+            " ", $CellContext`\[WhiteRook], " "}, {
+            " ", $CellContext`\[WhiteKing], " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            1, 3}, 1}, 5} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], 
+             " ", $CellContext`\[WhiteRook]}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 2}, {3, 2}, {
+            2, 3}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], " "}, {
+            " ", " ", $CellContext`\[WhiteRook]}, {
+            " ", $CellContext`\[WhiteKing], " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 2}, {3, 2}, {
+            2, 1}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], 
+             " "}, {$CellContext`\[WhiteRook], " ", " "}, {
+            " ", $CellContext`\[WhiteKing], " "}}, Dividers -> All, 
+           ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}], {{{1, 1}, {3, 2}, {
+            3, 3}, 0}, 4} -> 
+         Grid[{{" ", $CellContext`\[BlackKing], $CellContext`\[WhiteRook]}, {
+            " ", " ", " "}, {$CellContext`\[WhiteKing], " ", " "}}, Dividers -> 
+           All, ItemSize -> {1., 1.}, 
+           Background -> {
+            Automatic, 
+             Automatic, {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+              GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+              GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+              GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+              GrayLevel[1], {3, 3} -> GrayLevel[0.85]}}]}, 
+       VertexSize -> {0.6}}]]}, 
+    TagBox[GraphicsGroupBox[GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGCQBWIQHbC2/Z+QJpOD31WDf+8jv9kv2ZX1b2PfY/tf85f8
+Kz78wd5btfnvyt3v4PxFZS9q/17ndIDxfSauq7VezAPnf1tdUluZx++Arh9i
+/jMozeYA438TX/CXK4wXzmeAAh8w/xrU3gf2MD7EfZ/hfIj5/+B8mH9g/J/H
+ff8FfGGB8xc/Ev7Xt58dzvf9e/PvmS4uOB/mHhifAQ34oomjuxvmb1T5b3D+
+Qq69f7M//EZTz+AA48PcC+PD3Au3H+peGB/mXhgfAJMB0HQ=
+       "], {
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Small], 
+         ArrowBox[{{1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {3, 7}, {4, 8}, {4,
+           9}, {5, 7}, {6, 8}, {6, 9}, {7, 10}, {7, 11}, {7, 12}, {7, 13}, {8,
+           12}, {8, 14}, {8, 15}, {8, 16}, {8, 17}, {9, 18}, {10, 19}, {11, 
+          20}, {11, 21}, {12, 22}, {12, 23}, {13, 24}, {13, 25}, {14, 19}, {
+          15, 26}, {16, 27}, {17, 28}, {18, 29}}, 0.10477180430407293`]}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
          InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "3"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {2.487434319491873, 0.7688453592649374}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.8559431075647432, 0.73701757614574}, 0.03182778311919732],
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
+             {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 1, Automatic, {0.20954360860814586, 0.20954360860814586}],
           InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "3"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {2.8559431075647432, 0.7688453592649374}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{3.224451895637613, 0.73701757614574}, 0.03182778311919732], 
-         InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "3"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {3.224451895637613, 0.7688453592649374}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.5527631821093051, 0.36850878807287}, 0.03182778311919732],
+          TagBox[GridBox[{
+             {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
+             {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 2, Automatic, {0.20954360860814586, 0.20954360860814586}],
           InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "1"}], "}"}], ",", "1"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {0.5527631821093051, 0.40033657119206734}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.026798334400785, 0.36850878807287}, 0.03182778311919732], 
-         InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "3"}], "}"}], ",", "1"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {2.026798334400785, 0.40033657119206734}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.9480703045829606, 0.36850878807287}, 0.03182778311919732],
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\[WhiteRook]", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 3, Automatic, {0.20954360860814586, 0.20954360860814586}],
           InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"-", "1"}], ",", 
-                RowBox[{"-", "1"}]}], "}"}], ",", "1"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, 2}, {2.9480703045829606, 0.40033657119206734}], 
-          ImageScaled[{0.5, 0}],
-          BaseStyle->"Graphics"]}, {DiskBox[{0., 0.}, 0.03182778311919732], 
-         InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {0., -0.03182778311919732}], ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.3685087880728701, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {0.3685087880728701, -0.03182778311919732}],
-           ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.7370175761457401, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "2"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {0.7370175761457401, -0.03182778311919732}],
-           ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{1.1055263642186102, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {1.1055263642186102, -0.03182778311919732}],
-           ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{1.47403515229148, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {1.47403515229148, -0.03182778311919732}], 
-          ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{1.8425439403643502, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"1", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {1.8425439403643502, -0.03182778311919732}],
-           ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.2110527284372203, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "3"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {2.2110527284372203, -0.03182778311919732}],
-           ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.5795615165100907, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "1"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"2", ",", "1"}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {2.5795615165100907, -0.03182778311919732}],
-           ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.9480703045829606, 0.}, 0.03182778311919732], InsetBox[
-          RowBox[{"ChessPosition", "(", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"1", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"3", ",", "2"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"-", "1"}], ",", 
-                RowBox[{"-", "1"}]}], "}"}], ",", "0"}], "}"}], ",", "3"}], 
-           ")"}], Offset[{0, -2}, {2.9480703045829606, -0.03182778311919732}],
-           ImageScaled[{0.5, 1}],
-          BaseStyle->"Graphics"]}}}],
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[WhiteRook]", "\[BlackKing]"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 4, Automatic, {0.20954360860814586, 0.20954360860814586}],
+          InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
+             {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 5, Automatic, {0.20954360860814586, 0.20954360860814586}],
+          InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
+             {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 6, Automatic, {0.20954360860814586, 0.20954360860814586}],
+          InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 7, Automatic, {0.20954360860814586, 0.20954360860814586}],
+          InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 8, Automatic, {0.20954360860814586, 0.20954360860814586}],
+          InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 9, Automatic, {0.20954360860814586, 0.20954360860814586}],
+          InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 10, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\[WhiteRook]", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 11, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 12, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 13, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
+             {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 14, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\[WhiteRook]"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 15, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\[WhiteRook]"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 16, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 17, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 18, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
+             {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 19, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\[WhiteRook]"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 20, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 21, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 22, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
+             {"\<\" \"\>", "\[WhiteRook]", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 23, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\[BlackKing]", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 24, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\[WhiteRook]"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 25, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\[WhiteRook]"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 26, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 27, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\<\" \"\>", "\<\" \"\>", "\[BlackKing]"},
+             {"\[WhiteRook]", "\<\" \"\>", "\<\" \"\>"},
+             {"\[WhiteKing]", "\<\" \"\>", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 28, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}], InsetBox[
+          TagBox[GridBox[{
+             {"\[BlackKing]", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\<\" \"\>", "\<\" \"\>"},
+             {"\<\" \"\>", "\[WhiteKing]", "\<\" \"\>"}
+            },
+            AutoDelete->False,
+            
+            GridBoxBackground->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+              "ItemsIndexed" -> {{1, 1} -> GrayLevel[0.85], {1, 2} -> 
+                GrayLevel[1], {1, 3} -> GrayLevel[0.85], {2, 1} -> 
+                GrayLevel[1], {2, 2} -> GrayLevel[0.85], {2, 3} -> 
+                GrayLevel[1], {3, 1} -> GrayLevel[0.85], {3, 2} -> 
+                GrayLevel[1], {3, 3} -> GrayLevel[0.85]}},
+            GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+            GridBoxItemSize->{"Columns" -> {{1.}}, "Rows" -> {{1.}}}],
+           "Grid"], 29, 
+          Automatic, {0.20954360860814586, 0.20954360860814586}]}}]],
      MouseAppearanceTag["NetworkGraphics"]],
     AllowKernelInitialization->False]],
   DefaultBaseStyle->{
    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
   FormatType->TraditionalForm,
   FrameTicks->None,
-  ImageSize->{Automatic, 346.04914603345117`}]], "Output",
- CellChangeTimes->{
-  3.866482522279887*^9, 3.86648258522297*^9, 3.8664826622673063`*^9, 
-   3.866482736016438*^9, {3.8664829377905827`*^9, 3.866482965607339*^9}, {
-   3.866483025809599*^9, 3.866483089894123*^9}, {3.866483192406275*^9, 
-   3.866483216885419*^9}, {3.86648330111303*^9, 3.866483451196282*^9}, 
-   3.8664835304246492`*^9, 3.86648356484041*^9, {3.866483606054386*^9, 
-   3.8664836403972683`*^9}, {3.86648367074574*^9, 3.866483727255211*^9}, 
-   3.866483771792553*^9, 3.8664839482930193`*^9, 3.8664840067576*^9, 
-   3.866484041879987*^9, 3.866484091138546*^9, 3.866484204248536*^9, {
-   3.8664842351265707`*^9, 3.866484284085761*^9}, 3.8664843838641367`*^9, 
-   3.866484527072495*^9, {3.8664845879907837`*^9, 3.866484603675374*^9}, 
-   3.866485564984666*^9, 3.866485667553797*^9, 3.8664857157809973`*^9, 
-   3.866485773231505*^9, 3.866485815362474*^9, 3.866486207478125*^9, 
-   3.866486271349584*^9, 3.866486356893909*^9, 3.866486426386724*^9},
+  ImageSize->{Automatic, 423.246835443038}]], "Output",
+ CellChangeTimes->{3.866527866883026*^9},
  CellLabel->
-  "Out[221]=",ExpressionUUID->"e52cf19a-1431-4adf-b859-afcb9176e84c"]
+  "Out[322]=",ExpressionUUID->"5235ab1a-4773-4a16-855d-85d46feb2ac3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -20814,50 +20260,47 @@ Cell[39217, 1038, 1487, 34, 71, "Input",ExpressionUUID->"8809d51d-3a6f-4bcd-b108
 Cell[40707, 1074, 1292, 32, 71, "Input",ExpressionUUID->"82062899-684a-4819-9f17-8e8d21660e53"],
 Cell[42002, 1108, 1073, 21, 29, "Input",ExpressionUUID->"f7d8459f-8f67-4ad6-a1b7-e5f907b709ca"],
 Cell[43078, 1131, 3558, 92, 178, "Input",ExpressionUUID->"e600b474-3df5-483a-a394-b2c21cfdab46"],
-Cell[46639, 1225, 411, 9, 29, "Input",ExpressionUUID->"090d42c9-ae27-4a84-8b60-241e1b32f5e7"],
-Cell[47053, 1236, 992, 21, 29, "Input",ExpressionUUID->"23ef9c27-963f-41ef-af6f-bdaf1e489bd6"],
-Cell[48048, 1259, 1416, 33, 154, "Input",ExpressionUUID->"7caa68da-321a-443a-b297-753e5f4d127b"],
-Cell[49467, 1294, 550, 14, 29, "Input",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
-Cell[50020, 1310, 1530, 31, 71, "Input",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
-Cell[51553, 1343, 1844, 35, 29, "Input",ExpressionUUID->"2684d4f2-4068-4f10-b4b5-117c8e3d864d"],
-Cell[53400, 1380, 648, 14, 29, "Input",ExpressionUUID->"97fd2ed6-e477-4b2f-a53a-ea35598a1aa0"],
-Cell[54051, 1396, 1681, 37, 92, "Input",ExpressionUUID->"b4acab3d-916c-4772-aea4-a77131b32adf"],
-Cell[55735, 1435, 1014, 25, 76, "Input",ExpressionUUID->"ebb4f189-e837-4ec9-a987-9f3f0031ac4b"],
-Cell[56752, 1462, 1869, 46, 92, "Input",ExpressionUUID->"883a6053-506b-4f9f-8635-c93de6435c7f"],
-Cell[58624, 1510, 740, 17, 92, "Input",ExpressionUUID->"658f321f-c7e5-4cae-aaf0-ffce34e929c8"],
-Cell[59367, 1529, 2341, 55, 99, "Input",ExpressionUUID->"aeaf2c9d-4be2-448f-be08-7f7a50c0d0eb"],
-Cell[61711, 1586, 5298, 135, 381, "Input",ExpressionUUID->"a5eece2a-4d82-4531-835a-e0264ebbe3fd"],
+Cell[46639, 1225, 3000, 81, 208, "Input",ExpressionUUID->"6a22fdbd-4301-4ce8-810a-3bd02d887392"],
+Cell[49642, 1308, 411, 9, 29, "Input",ExpressionUUID->"090d42c9-ae27-4a84-8b60-241e1b32f5e7"],
+Cell[50056, 1319, 992, 21, 29, "Input",ExpressionUUID->"23ef9c27-963f-41ef-af6f-bdaf1e489bd6"],
+Cell[51051, 1342, 1416, 33, 154, "Input",ExpressionUUID->"7caa68da-321a-443a-b297-753e5f4d127b"],
+Cell[52470, 1377, 550, 14, 29, "Input",ExpressionUUID->"98dcf714-e6c3-4a34-bb22-09e929c9a833"],
+Cell[53023, 1393, 1530, 31, 71, "Input",ExpressionUUID->"9e1faa9b-4aeb-4055-ab23-c17dac44480a"],
+Cell[54556, 1426, 1844, 35, 29, "Input",ExpressionUUID->"2684d4f2-4068-4f10-b4b5-117c8e3d864d"],
+Cell[56403, 1463, 648, 14, 29, "Input",ExpressionUUID->"97fd2ed6-e477-4b2f-a53a-ea35598a1aa0"],
+Cell[57054, 1479, 1681, 37, 92, "Input",ExpressionUUID->"b4acab3d-916c-4772-aea4-a77131b32adf"],
+Cell[58738, 1518, 1014, 25, 76, "Input",ExpressionUUID->"ebb4f189-e837-4ec9-a987-9f3f0031ac4b"],
+Cell[59755, 1545, 1869, 46, 92, "Input",ExpressionUUID->"883a6053-506b-4f9f-8635-c93de6435c7f"],
+Cell[61627, 1593, 740, 17, 92, "Input",ExpressionUUID->"658f321f-c7e5-4cae-aaf0-ffce34e929c8"],
+Cell[62370, 1612, 2341, 55, 99, "Input",ExpressionUUID->"aeaf2c9d-4be2-448f-be08-7f7a50c0d0eb"],
+Cell[64714, 1669, 5476, 137, 319, "Input",ExpressionUUID->"a5eece2a-4d82-4531-835a-e0264ebbe3fd"],
 Cell[CellGroupData[{
-Cell[67034, 1725, 238, 5, 29, "Input",ExpressionUUID->"31fc41b6-b396-4f63-8280-66e06ac4a9f0"],
-Cell[CellGroupData[{
-Cell[67297, 1734, 38989, 980, 579, "Print",ExpressionUUID->"420ccc19-b1c1-4ffb-8741-2474648146f0"],
-Cell[106289, 2716, 6167, 213, 83, "Print",ExpressionUUID->"92491cdc-5e1a-4717-85de-9d054b9dad72"]
-}, Open  ]],
-Cell[112471, 2932, 16231, 351, 363, "Output",ExpressionUUID->"e52cf19a-1431-4adf-b859-afcb9176e84c"]
+Cell[70215, 1810, 831, 13, 29, "Input",ExpressionUUID->"31fc41b6-b396-4f63-8280-66e06ac4a9f0"],
+Cell[71049, 1825, 48215, 904, 440, "Output",ExpressionUUID->"5235ab1a-4773-4a16-855d-85d46feb2ac3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[128739, 3288, 516, 8, 29, "Input",ExpressionUUID->"536925ac-4917-45fa-b5ee-875d6e8c40c1"],
-Cell[129258, 3298, 93947, 1836, 602, "Output",ExpressionUUID->"006014bf-a91f-4d94-a6ff-29e5905925c3"]
+Cell[119301, 2734, 516, 8, 29, "Input",ExpressionUUID->"536925ac-4917-45fa-b5ee-875d6e8c40c1"],
+Cell[119820, 2744, 93947, 1836, 602, "Output",ExpressionUUID->"006014bf-a91f-4d94-a6ff-29e5905925c3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[223242, 5139, 402, 7, 29, "Input",ExpressionUUID->"01f4aff9-8909-4956-a6c1-fce20b41d42d"],
-Cell[223647, 5148, 110030, 2070, 647, "Output",ExpressionUUID->"c7460e0b-feeb-4cf1-9084-822f88b94ccb"]
+Cell[213804, 4585, 402, 7, 29, "Input",ExpressionUUID->"01f4aff9-8909-4956-a6c1-fce20b41d42d"],
+Cell[214209, 4594, 110030, 2070, 647, "Output",ExpressionUUID->"c7460e0b-feeb-4cf1-9084-822f88b94ccb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[333714, 7223, 492, 8, 29, "Input",ExpressionUUID->"ac60983d-e6a3-48d5-9673-77730506f94e"],
-Cell[334209, 7233, 94370, 1845, 552, "Output",ExpressionUUID->"5e1b5d64-4519-4696-8f9a-1dd664d68748"]
+Cell[324276, 6669, 492, 8, 29, "Input",ExpressionUUID->"ac60983d-e6a3-48d5-9673-77730506f94e"],
+Cell[324771, 6679, 94370, 1845, 552, "Output",ExpressionUUID->"5e1b5d64-4519-4696-8f9a-1dd664d68748"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[428616, 9083, 3832, 94, 197, "Input",ExpressionUUID->"0025acc6-4ec5-4fc4-a552-346e0a0ed69c"],
-Cell[432451, 9179, 1515, 26, 49, "Output",ExpressionUUID->"a56f913d-ca30-42e8-a4a2-a4423231fc04"],
-Cell[433969, 9207, 2036, 44, 33, "Output",ExpressionUUID->"7e918528-4bcb-4617-8ae0-c987f0a47d65"],
-Cell[436008, 9253, 2240, 45, 45, "Output",ExpressionUUID->"6d483f07-bd56-4df4-8b45-a2a53a3757cd"],
-Cell[438251, 9300, 2368, 44, 56, "Output",ExpressionUUID->"8f4f9e65-e446-4f98-a90c-2c7b20a1f52a"],
-Cell[440622, 9346, 15951, 351, 299, "Output",ExpressionUUID->"2d23c6a3-c5fc-42aa-9b6c-270fb68c28aa"]
+Cell[419178, 8529, 3832, 94, 197, "Input",ExpressionUUID->"0025acc6-4ec5-4fc4-a552-346e0a0ed69c"],
+Cell[423013, 8625, 1515, 26, 49, "Output",ExpressionUUID->"a56f913d-ca30-42e8-a4a2-a4423231fc04"],
+Cell[424531, 8653, 2036, 44, 33, "Output",ExpressionUUID->"7e918528-4bcb-4617-8ae0-c987f0a47d65"],
+Cell[426570, 8699, 2240, 45, 45, "Output",ExpressionUUID->"6d483f07-bd56-4df4-8b45-a2a53a3757cd"],
+Cell[428813, 8746, 2368, 44, 56, "Output",ExpressionUUID->"8f4f9e65-e446-4f98-a90c-2c7b20a1f52a"],
+Cell[431184, 8792, 15951, 351, 299, "Output",ExpressionUUID->"2d23c6a3-c5fc-42aa-9b6c-270fb68c28aa"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[456610, 9702, 167, 3, 29, "Input",ExpressionUUID->"5a173917-d74d-4ae8-aea7-275dc90be0a5"],
-Cell[456780, 9707, 510223, 11066, 940, "Output",ExpressionUUID->"f4390ea0-c237-4f18-a7dc-c12b18b7569f"]
+Cell[447172, 9148, 167, 3, 29, "Input",ExpressionUUID->"5a173917-d74d-4ae8-aea7-275dc90be0a5"],
+Cell[447342, 9153, 510223, 11066, 940, "Output",ExpressionUUID->"f4390ea0-c237-4f18-a7dc-c12b18b7569f"]
 }, Open  ]]
 }, Open  ]]
 }
